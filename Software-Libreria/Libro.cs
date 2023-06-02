@@ -14,9 +14,8 @@ namespace Software_Libreria
         private string editorial { get; set; }
         private double precio { get; set; }
 
-        public Libro(string idLibro, string titulo, string autor, string editorial, double precio)
+        public Libro(string titulo, string autor, string editorial, double precio)
         {
-            this.idLibro = idLibro;
             this.titulo = titulo;
             this.autor = autor;
             this.editorial = editorial;
