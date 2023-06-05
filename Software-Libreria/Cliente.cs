@@ -8,8 +8,10 @@ namespace Software_Libreria
 {
     internal class Cliente : Persona
     {
-        public Cliente(string id, string nombre, int edad, string dni, string direccion, string telefono) : base(id, nombre, edad, dni, direccion, telefono)
+        public Cliente(string nombre, int edad, string dni, string direccion, string telefono) : base(nombre, edad, dni, direccion, telefono)
         {
         }
+
+
     }
 }
