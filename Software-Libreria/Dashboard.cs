@@ -37,5 +37,13 @@ namespace Software_Libreria
             using (VentanaCliente ventanaClientes = new VentanaCliente())
                 ventanaClientes.ShowDialog();
         }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            {
+                using (RegistroDeVenta ventanaClientes = new RegistroDeVenta())
+                    ventanaClientes.ShowDialog();
+            }
+        }
     }
 }
