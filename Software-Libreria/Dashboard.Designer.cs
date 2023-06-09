@@ -102,6 +102,7 @@
             btnSales.TabIndex = 4;
             btnSales.Text = "REALIZAR VENTA";
             btnSales.UseVisualStyleBackColor = true;
+            btnSales.Click += btnSales_Click;
             // 
             // WindowDashboard
             // 
