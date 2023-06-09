@@ -31,5 +31,11 @@ namespace Software_Libreria
         {
             label1.Text += nombre_vendedor;
         }
+
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            using (VentanaCliente ventanaClientes = new VentanaCliente())
+                ventanaClientes.ShowDialog();
+        }
     }
 }

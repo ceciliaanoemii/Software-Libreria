@@ -20,48 +20,31 @@ namespace Software_Libreria
             this.clientes = new List<Cliente>();
         }
 
-        public Cliente BuscarCliente(string dni)
+        public List<Cliente> BuscarCliente(string dni)
         {
-            int index = 0;
-            Cliente ClienteEncontrado = null;
-
-            while (index < this.clientes.Count)
-            {
-                if (clientes[index].DNI == dni)
-                {
-                    ClienteEncontrado = clientes[index];
-                }
-                index++;
-            }
-
-            return ClienteEncontrado; // Si no se encuentra el cliente, se devuelve null
+            List<Cliente> clientesEncontrados = clientes.FindAll(cliente => cliente.DNI.Equals(dni));
+            return clientesEncontrados;
         }
 
         public void AgregarCliente(Cliente cliente)
         {
-            Cliente nuevoCliente;
-            Cliente ClienteEncontrado = BuscarCliente(cliente.DNI);
-            if(ClienteEncontrado != null)
-            {
-                Console.WriteLine("El cliente ya existe en la base de datos");
-            }
-            nuevoCliente = new Cliente(cliente.Nombre,cliente.Edad,cliente.DNI,cliente.Direccion, cliente.Telefono);
-            this.clientes.Add(nuevoCliente);
-        }
+            List<Cliente> clientesEncontrados = BuscarCliente(cliente.Nombre);
 
-        public void EliminarCliente(string dni)
-        {
-            Cliente ClienteEncontrado = BuscarCliente(dni);
-            if (ClienteEncontrado == null)
+            if (clientesEncontrados.Count == 0)
             {
-                Console.WriteLine("El cliente no existe en la base de datos para ser eliminado");       
+                clientes.Add(cliente);
+
+                MessageBox.Show
+                ("Cliente agregado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                this.clientes.Remove(ClienteEncontrado);
-                Console.WriteLine("Cliente elimanado exitosamente");
+
+                MessageBox.Show
+                ("El cliente ya existe en la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
     }
 }

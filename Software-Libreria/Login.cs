@@ -46,7 +46,7 @@ namespace Software_Libreria
         {
 
         }
-
+        //*función ir a el otro formulario*//
         private void Ingresar_Click(object sender, EventArgs e)
         {
             using (WindowDashboard winDashboard = new WindowDashboard(nombreUsuario.Text, contrasenia.Text))
