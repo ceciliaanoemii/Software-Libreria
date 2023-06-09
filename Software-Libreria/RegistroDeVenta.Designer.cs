@@ -40,10 +40,17 @@
             btnSalir = new Button();
             lblPrecio = new Label();
             groupBox1 = new GroupBox();
-            txtSeleccionTipoPago = new TextBox();
-            txtSeleccionLibro = new TextBox();
+            comboSeleccionTipoPago = new ComboBox();
+            comboSeleccionLibro = new ComboBox();
             txtCantidad = new TextBox();
-            listView1 = new ListView();
+            listVenta = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -96,7 +103,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(170, 19);
+            label6.Location = new Point(233, 19);
             label6.Name = "label6";
             label6.Size = new Size(58, 15);
             label6.TabIndex = 5;
@@ -119,6 +126,7 @@
             btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnRegistrar
             // 
@@ -128,6 +136,7 @@
             btnRegistrar.TabIndex = 8;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnSalir
             // 
@@ -137,6 +146,7 @@
             btnSalir.TabIndex = 9;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lblPrecio
             // 
@@ -150,8 +160,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(txtSeleccionTipoPago);
-            groupBox1.Controls.Add(txtSeleccionLibro);
+            groupBox1.Controls.Add(comboSeleccionTipoPago);
+            groupBox1.Controls.Add(comboSeleccionLibro);
             groupBox1.Controls.Add(lblPrecio);
             groupBox1.Controls.Add(txtCantidad);
             groupBox1.Controls.Add(label6);
@@ -165,43 +175,75 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Control de ventas";
             // 
-            // txtSeleccionTipoPago
+            // comboSeleccionTipoPago
             // 
-            txtSeleccionTipoPago.Location = new Point(7, 90);
-            txtSeleccionTipoPago.Name = "txtSeleccionTipoPago";
-            txtSeleccionTipoPago.Size = new Size(141, 23);
-            txtSeleccionTipoPago.TabIndex = 15;
+            comboSeleccionTipoPago.FormattingEnabled = true;
+            comboSeleccionTipoPago.Items.AddRange(new object[] { "Efectivo", "Mercado Pago", "Tarjeta" });
+            comboSeleccionTipoPago.Location = new Point(7, 93);
+            comboSeleccionTipoPago.Name = "comboSeleccionTipoPago";
+            comboSeleccionTipoPago.Size = new Size(210, 23);
+            comboSeleccionTipoPago.TabIndex = 15;
             // 
-            // txtSeleccionLibro
+            // comboSeleccionLibro
             // 
-            txtSeleccionLibro.Location = new Point(6, 37);
-            txtSeleccionLibro.Name = "txtSeleccionLibro";
-            txtSeleccionLibro.Size = new Size(142, 23);
-            txtSeleccionLibro.TabIndex = 13;
-            txtSeleccionLibro.TextChanged += txtSeleccionLibro_TextChanged;
+            comboSeleccionLibro.FormattingEnabled = true;
+            comboSeleccionLibro.Items.AddRange(new object[] { "Harry Potter - Las reliquias de la muerte", "El señor de los anillos - Las dos torres", "Agatha Christie - Asesinado en Mesopotamia" });
+            comboSeleccionLibro.Location = new Point(6, 38);
+            comboSeleccionLibro.Name = "comboSeleccionLibro";
+            comboSeleccionLibro.Size = new Size(211, 23);
+            comboSeleccionLibro.TabIndex = 13;
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(170, 38);
+            txtCantidad.Location = new Point(233, 38);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(100, 23);
             txtCantidad.TabIndex = 14;
             // 
-            // listView1
+            // listVenta
             // 
-            listView1.Location = new Point(21, 280);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(767, 129);
-            listView1.TabIndex = 12;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listVenta.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
+            listVenta.Location = new Point(21, 280);
+            listVenta.Name = "listVenta";
+            listVenta.Size = new Size(767, 129);
+            listVenta.TabIndex = 12;
+            listVenta.UseCompatibleStateImageBehavior = false;
+            listVenta.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Producto";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Cantidad";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Precio";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Tipo de Pago";
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Descuento";
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Recargo";
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Precio Final";
             // 
             // RegistroDeVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listView1);
+            Controls.Add(listVenta);
             Controls.Add(groupBox1);
             Controls.Add(btnSalir);
             Controls.Add(btnRegistrar);
@@ -232,9 +274,16 @@
         private Button btnSalir;
         private Label lblPrecio;
         private GroupBox groupBox1;
-        private TextBox txtSeleccionTipoPago;
-        private TextBox txtSeleccionLibro;
         private TextBox txtCantidad;
-        private ListView listView1;
+        private ListView listVenta;
+        private ComboBox comboSeleccionTipoPago;
+        private ComboBox comboSeleccionLibro;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
     }
 }
