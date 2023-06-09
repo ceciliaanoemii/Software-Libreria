@@ -32,18 +32,21 @@ namespace Software_Libreria
             label1.Text += nombre_vendedor;
         }
 
-        private void btnClients_Click(object sender, EventArgs e)
+        private void btnBooks_Click(object sender, EventArgs e)
         {
-            using (VentanaCliente ventanaClientes = new VentanaCliente())
+            RegistroLibros varUno = new RegistroLibros();
+            varUno.Show();
+        }
+
+        private void btnSales_Click_1(object sender, EventArgs e)
+        {
+            using (RegistroDeVenta ventanaClientes = new RegistroDeVenta())
                 ventanaClientes.ShowDialog();
         }
 
-        private void btnSales_Click(object sender, EventArgs e)
+        private void button1_Click_2(object sender, EventArgs e)
         {
-            {
-                using (RegistroDeVenta ventanaClientes = new RegistroDeVenta())
-                    ventanaClientes.ShowDialog();
-            }
+            this.Close();
         }
     }
 }
