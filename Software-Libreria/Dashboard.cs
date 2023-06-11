@@ -14,6 +14,7 @@ namespace Software_Libreria
     {
         string nombre_vendedor;
         string contrasenia_vendedor;
+        List<VentanaLibros> lista_libros = new List<VentanaLibros>();
         public WindowDashboard(string usuario, string contrasenia)
         {
             InitializeComponent();
@@ -34,8 +35,8 @@ namespace Software_Libreria
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
-            RegistroLibros varUno = new RegistroLibros();
-            varUno.Show();
+            using (VentanaLibros ventanaLibros = new VentanaLibros(lista_libros)) 
+            ventanaLibros.ShowDialog();
         }
 
         private void btnSales_Click_1(object sender, EventArgs e)

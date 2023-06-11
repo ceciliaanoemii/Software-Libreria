@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Software_Libreria
 {
     public partial class RegistroLibros : Form
     {
-        public RegistroLibros()
+
+        private string path;
+        List<VentanaLibros> listaLibros;
+        public RegistroLibros(List<VentanaLibros> lista_libros)
         {
             InitializeComponent();
+            listaLibros = lista_libros;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
@@ -29,9 +34,9 @@ namespace Software_Libreria
 
         private void slregistrar_Click(object sender, EventArgs e)
         {
-           
+
         }
-       
+
 
         private void tslsalir_Click(object sender, EventArgs e)
         {
@@ -57,6 +62,10 @@ namespace Software_Libreria
         {
 
         }
+        public void AgregarLibro(VentanaLibros libro)
+        {
+            listaLibros.Add(libro);
+        }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -71,12 +80,17 @@ namespace Software_Libreria
 
             dgvRegistrosTotales.Rows[n].Cells[4].Value = txtprecio.Text;
 
+            double pre = double.Parse(txtprecio.Text);
+
+            VentanaLibros libro = new VentanaLibros();
+            libro.setTodo(txtidlibro.Text, txttitulo.Text, txtautor.Text, txtEditorial.Text, pre);
+            AgregarLibro(libro);
+
             txtidlibro.Text = " ";
             txttitulo.Text = " ";
             txtautor.Text = " ";
             txtEditorial.Text = " ";
-            txtprecio.Text = " ";
-
+            txtprecio.Text = (0).ToString("C");
         }
 
         private void btnSalir2_Click(object sender, EventArgs e)
@@ -87,6 +101,24 @@ namespace Software_Libreria
                 Application.Exit();
             }
 
+        }
+        private void btnSeleccionPic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog abrir = new OpenFileDialog();
+            abrir.Filter = "JPEG(*.JPG)|*.JPG|BMP(*.BMP)|*.BMP";
+
+            if (abrir.ShowDialog() == DialogResult.OK)
+            {
+                path = abrir.FileName;
+                boxPicture.Image = Image.FromFile(abrir.FileName);
+
+            }
+        }
+        private void btnCopiarPic_Click(object sender, EventArgs e)
+        {
+            string id = txtidlibro.Text;
+            File.Copy(path, "images/image - " + id + ".jpg", true);
+            MessageBox.Show("Imagen cargada exitosamente!");
         }
     }
 }

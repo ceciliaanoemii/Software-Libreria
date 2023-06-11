@@ -28,281 +28,295 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsleliminar = new System.Windows.Forms.ToolStripLabel();
-            this.tslbuscar = new System.Windows.Forms.ToolStripLabel();
-            this.tslRegresar = new System.Windows.Forms.ToolStripLabel();
-            this.erperror = new System.Windows.Forms.ErrorProvider(this.components);
-            this.gbRegistroLibros = new System.Windows.Forms.GroupBox();
-            this.txtEditorial = new System.Windows.Forms.TextBox();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.txtprecio = new System.Windows.Forms.TextBox();
-            this.txttitulo = new System.Windows.Forms.TextBox();
-            this.txtautor = new System.Windows.Forms.TextBox();
-            this.txtidlibro = new System.Windows.Forms.TextBox();
-            this.lblprecio = new System.Windows.Forms.Label();
-            this.lbleditorial = new System.Windows.Forms.Label();
-            this.lblautor = new System.Windows.Forms.Label();
-            this.lbltitulo = new System.Windows.Forms.Label();
-            this.lblidlibro = new System.Windows.Forms.Label();
-            this.dgvRegistrosTotales = new System.Windows.Forms.DataGridView();
-            this.column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir2 = new System.Windows.Forms.Button();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erperror)).BeginInit();
-            this.gbRegistroLibros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistrosTotales)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsleliminar,
-            this.tslbuscar,
-            this.tslRegresar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(764, 29);
-            this.toolStrip1.TabIndex = 12;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsleliminar
-            // 
-            this.tsleliminar.Name = "tsleliminar";
-            this.tsleliminar.Size = new System.Drawing.Size(81, 26);
-            this.tsleliminar.Text = "Eliminar";
-            // 
-            // tslbuscar
-            // 
-            this.tslbuscar.Name = "tslbuscar";
-            this.tslbuscar.Size = new System.Drawing.Size(74, 26);
-            this.tslbuscar.Text = "Buscar";
-            this.tslbuscar.Click += new System.EventHandler(this.toolStripLabel2_Click);
-            // 
-            // tslRegresar
-            // 
-            this.tslRegresar.Name = "tslRegresar";
-            this.tslRegresar.Size = new System.Drawing.Size(93, 26);
-            this.tslRegresar.Text = "Regresar";
-            this.tslRegresar.Click += new System.EventHandler(this.tslsalir_Click);
+            components = new System.ComponentModel.Container();
+            erperror = new ErrorProvider(components);
+            gbRegistroLibros = new GroupBox();
+            txtEditorial = new TextBox();
+            txtprecio = new TextBox();
+            txttitulo = new TextBox();
+            txtautor = new TextBox();
+            txtidlibro = new TextBox();
+            lblprecio = new Label();
+            lbleditorial = new Label();
+            lblautor = new Label();
+            lbltitulo = new Label();
+            lblidlibro = new Label();
+            btnRegistrar = new Button();
+            dgvRegistrosTotales = new DataGridView();
+            column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            column5 = new DataGridViewTextBoxColumn();
+            btnSeleccionPic = new Button();
+            boxPicture = new PictureBox();
+            btnCopiarPic = new Button();
+            btnCancelar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)erperror).BeginInit();
+            gbRegistroLibros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistrosTotales).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)boxPicture).BeginInit();
+            SuspendLayout();
             // 
             // erperror
             // 
-            this.erperror.ContainerControl = this;
+            erperror.ContainerControl = this;
             // 
             // gbRegistroLibros
             // 
-            this.gbRegistroLibros.Controls.Add(this.txtEditorial);
-            this.gbRegistroLibros.Controls.Add(this.btnRegistrar);
-            this.gbRegistroLibros.Controls.Add(this.txtprecio);
-            this.gbRegistroLibros.Controls.Add(this.txttitulo);
-            this.gbRegistroLibros.Controls.Add(this.txtautor);
-            this.gbRegistroLibros.Controls.Add(this.txtidlibro);
-            this.gbRegistroLibros.Controls.Add(this.lblprecio);
-            this.gbRegistroLibros.Controls.Add(this.lbleditorial);
-            this.gbRegistroLibros.Controls.Add(this.lblautor);
-            this.gbRegistroLibros.Controls.Add(this.lbltitulo);
-            this.gbRegistroLibros.Controls.Add(this.lblidlibro);
-            this.gbRegistroLibros.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gbRegistroLibros.Location = new System.Drawing.Point(42, 47);
-            this.gbRegistroLibros.Name = "gbRegistroLibros";
-            this.gbRegistroLibros.Size = new System.Drawing.Size(678, 171);
-            this.gbRegistroLibros.TabIndex = 14;
-            this.gbRegistroLibros.TabStop = false;
-            this.gbRegistroLibros.Text = "Registro de Libros";
-            this.gbRegistroLibros.Enter += new System.EventHandler(this.groupBox1_Enter);
+            gbRegistroLibros.Controls.Add(txtEditorial);
+            gbRegistroLibros.Controls.Add(txtprecio);
+            gbRegistroLibros.Controls.Add(txttitulo);
+            gbRegistroLibros.Controls.Add(txtautor);
+            gbRegistroLibros.Controls.Add(txtidlibro);
+            gbRegistroLibros.Controls.Add(lblprecio);
+            gbRegistroLibros.Controls.Add(lbleditorial);
+            gbRegistroLibros.Controls.Add(lblautor);
+            gbRegistroLibros.Controls.Add(lbltitulo);
+            gbRegistroLibros.Controls.Add(lblidlibro);
+            gbRegistroLibros.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            gbRegistroLibros.Location = new Point(53, 41);
+            gbRegistroLibros.Name = "gbRegistroLibros";
+            gbRegistroLibros.Size = new Size(512, 171);
+            gbRegistroLibros.TabIndex = 14;
+            gbRegistroLibros.TabStop = false;
+            gbRegistroLibros.Text = "Registro de Libros";
+            gbRegistroLibros.Enter += groupBox1_Enter;
             // 
             // txtEditorial
             // 
-            this.txtEditorial.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEditorial.Location = new System.Drawing.Point(326, 102);
-            this.txtEditorial.Name = "txtEditorial";
-            this.txtEditorial.Size = new System.Drawing.Size(157, 25);
-            this.txtEditorial.TabIndex = 25;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrar.Location = new System.Drawing.Point(535, 105);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(133, 37);
-            this.btnRegistrar.TabIndex = 24;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            txtEditorial.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEditorial.Location = new Point(326, 102);
+            txtEditorial.Name = "txtEditorial";
+            txtEditorial.Size = new Size(157, 25);
+            txtEditorial.TabIndex = 25;
             // 
             // txtprecio
             // 
-            this.txtprecio.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtprecio.Location = new System.Drawing.Point(564, 57);
-            this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(93, 25);
-            this.txtprecio.TabIndex = 22;
+            txtprecio.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtprecio.Location = new Point(90, 148);
+            txtprecio.Name = "txtprecio";
+            txtprecio.Size = new Size(93, 25);
+            txtprecio.TabIndex = 22;
             // 
             // txttitulo
             // 
-            this.txttitulo.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txttitulo.Location = new System.Drawing.Point(326, 57);
-            this.txttitulo.Name = "txttitulo";
-            this.txttitulo.Size = new System.Drawing.Size(157, 25);
-            this.txttitulo.TabIndex = 21;
+            txttitulo.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txttitulo.Location = new Point(326, 57);
+            txttitulo.Name = "txttitulo";
+            txttitulo.Size = new Size(157, 25);
+            txttitulo.TabIndex = 21;
             // 
             // txtautor
             // 
-            this.txtautor.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtautor.Location = new System.Drawing.Point(88, 102);
-            this.txtautor.Name = "txtautor";
-            this.txtautor.Size = new System.Drawing.Size(133, 25);
-            this.txtautor.TabIndex = 20;
+            txtautor.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtautor.Location = new Point(88, 102);
+            txtautor.Name = "txtautor";
+            txtautor.Size = new Size(133, 25);
+            txtautor.TabIndex = 20;
             // 
             // txtidlibro
             // 
-            this.txtidlibro.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtidlibro.Location = new System.Drawing.Point(88, 57);
-            this.txtidlibro.Name = "txtidlibro";
-            this.txtidlibro.Size = new System.Drawing.Size(133, 25);
-            this.txtidlibro.TabIndex = 19;
+            txtidlibro.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtidlibro.Location = new Point(88, 57);
+            txtidlibro.Name = "txtidlibro";
+            txtidlibro.Size = new Size(133, 25);
+            txtidlibro.TabIndex = 19;
             // 
             // lblprecio
             // 
-            this.lblprecio.AutoSize = true;
-            this.lblprecio.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblprecio.Location = new System.Drawing.Point(502, 60);
-            this.lblprecio.Name = "lblprecio";
-            this.lblprecio.Size = new System.Drawing.Size(58, 18);
-            this.lblprecio.TabIndex = 18;
-            this.lblprecio.Text = "Precio :";
+            lblprecio.AutoSize = true;
+            lblprecio.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblprecio.Location = new Point(26, 151);
+            lblprecio.Name = "lblprecio";
+            lblprecio.Size = new Size(58, 18);
+            lblprecio.TabIndex = 18;
+            lblprecio.Text = "Precio :";
             // 
             // lbleditorial
             // 
-            this.lbleditorial.AutoSize = true;
-            this.lbleditorial.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbleditorial.Location = new System.Drawing.Point(246, 105);
-            this.lbleditorial.Name = "lbleditorial";
-            this.lbleditorial.Size = new System.Drawing.Size(74, 18);
-            this.lbleditorial.TabIndex = 17;
-            this.lbleditorial.Text = "Editorial :";
+            lbleditorial.AutoSize = true;
+            lbleditorial.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbleditorial.Location = new Point(246, 105);
+            lbleditorial.Name = "lbleditorial";
+            lbleditorial.Size = new Size(74, 18);
+            lbleditorial.TabIndex = 17;
+            lbleditorial.Text = "Editorial :";
             // 
             // lblautor
             // 
-            this.lblautor.AutoSize = true;
-            this.lblautor.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblautor.Location = new System.Drawing.Point(31, 105);
-            this.lblautor.Name = "lblautor";
-            this.lblautor.Size = new System.Drawing.Size(51, 18);
-            this.lblautor.TabIndex = 16;
-            this.lblautor.Text = "Autor:";
+            lblautor.AutoSize = true;
+            lblautor.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblautor.Location = new Point(31, 105);
+            lblautor.Name = "lblautor";
+            lblautor.Size = new Size(51, 18);
+            lblautor.TabIndex = 16;
+            lblautor.Text = "Autor:";
             // 
             // lbltitulo
             // 
-            this.lbltitulo.AutoSize = true;
-            this.lbltitulo.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbltitulo.Location = new System.Drawing.Point(246, 60);
-            this.lbltitulo.Name = "lbltitulo";
-            this.lbltitulo.Size = new System.Drawing.Size(56, 18);
-            this.lbltitulo.TabIndex = 15;
-            this.lbltitulo.Text = "Titulo :";
+            lbltitulo.AutoSize = true;
+            lbltitulo.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbltitulo.Location = new Point(246, 60);
+            lbltitulo.Name = "lbltitulo";
+            lbltitulo.Size = new Size(56, 18);
+            lbltitulo.TabIndex = 15;
+            lbltitulo.Text = "Titulo :";
             // 
             // lblidlibro
             // 
-            this.lblidlibro.AutoSize = true;
-            this.lblidlibro.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblidlibro.Location = new System.Drawing.Point(11, 60);
-            this.lblidlibro.Name = "lblidlibro";
-            this.lblidlibro.Size = new System.Drawing.Size(71, 18);
-            this.lblidlibro.TabIndex = 14;
-            this.lblidlibro.Text = "Id Libro :";
+            lblidlibro.AutoSize = true;
+            lblidlibro.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblidlibro.Location = new Point(11, 60);
+            lblidlibro.Name = "lblidlibro";
+            lblidlibro.Size = new Size(71, 18);
+            lblidlibro.TabIndex = 14;
+            lblidlibro.Text = "Id Libro :";
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRegistrar.Location = new Point(299, 391);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(133, 37);
+            btnRegistrar.TabIndex = 24;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // dgvRegistrosTotales
             // 
-            this.dgvRegistrosTotales.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvRegistrosTotales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistrosTotales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.column1,
-            this.Column2,
-            this.column3,
-            this.Column4,
-            this.column5});
-            this.dgvRegistrosTotales.Location = new System.Drawing.Point(130, 224);
-            this.dgvRegistrosTotales.Name = "dgvRegistrosTotales";
-            this.dgvRegistrosTotales.RowTemplate.Height = 25;
-            this.dgvRegistrosTotales.Size = new System.Drawing.Size(512, 137);
-            this.dgvRegistrosTotales.TabIndex = 10;
-            this.dgvRegistrosTotales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            dgvRegistrosTotales.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvRegistrosTotales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRegistrosTotales.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, column3, Column4, column5 });
+            dgvRegistrosTotales.Location = new Point(37, 248);
+            dgvRegistrosTotales.Name = "dgvRegistrosTotales";
+            dgvRegistrosTotales.RowTemplate.Height = 25;
+            dgvRegistrosTotales.Size = new Size(512, 137);
+            dgvRegistrosTotales.TabIndex = 10;
+            dgvRegistrosTotales.CellContentClick += dataGridView1_CellContentClick;
             // 
             // column1
             // 
-            this.column1.HeaderText = "Id Libro";
-            this.column1.Name = "column1";
-            this.column1.Width = 72;
+            column1.HeaderText = "Id Libro";
+            column1.Name = "column1";
+            column1.Width = 72;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Titulo";
-            this.Column2.Name = "Column2";
+            Column2.HeaderText = "Titulo";
+            Column2.Name = "Column2";
             // 
             // column3
             // 
-            this.column3.HeaderText = "Autor";
-            this.column3.Name = "column3";
+            column3.HeaderText = "Autor";
+            column3.Name = "column3";
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Editorial";
-            this.Column4.Name = "Column4";
+            Column4.HeaderText = "Editorial";
+            Column4.Name = "Column4";
             // 
             // column5
             // 
-            this.column5.HeaderText = "Precio";
-            this.column5.Name = "column5";
+            column5.HeaderText = "Precio";
+            column5.Name = "column5";
             // 
-            // btnSalir2
+            // btnSeleccionPic
             // 
-            this.btnSalir2.Location = new System.Drawing.Point(651, 386);
-            this.btnSalir2.Name = "btnSalir2";
-            this.btnSalir2.Size = new System.Drawing.Size(101, 42);
-            this.btnSalir2.TabIndex = 15;
-            this.btnSalir2.Text = "SALIR";
-            this.btnSalir2.UseVisualStyleBackColor = true;
-            this.btnSalir2.Click += new System.EventHandler(this.btnSalir2_Click);
+            btnSeleccionPic.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSeleccionPic.ImageAlign = ContentAlignment.TopCenter;
+            btnSeleccionPic.Location = new Point(644, 192);
+            btnSeleccionPic.Margin = new Padding(1);
+            btnSeleccionPic.Name = "btnSeleccionPic";
+            btnSeleccionPic.Size = new Size(52, 41);
+            btnSeleccionPic.TabIndex = 25;
+            btnSeleccionPic.Text = "+";
+            btnSeleccionPic.UseVisualStyleBackColor = true;
+            btnSeleccionPic.Click += btnSeleccionPic_Click;
+            // 
+            // boxPicture
+            // 
+            boxPicture.BorderStyle = BorderStyle.FixedSingle;
+            boxPicture.Location = new Point(582, 41);
+            boxPicture.Name = "boxPicture";
+            boxPicture.Size = new Size(170, 202);
+            boxPicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            boxPicture.TabIndex = 26;
+            boxPicture.TabStop = false;
+            // 
+            // btnCopiarPic
+            // 
+            btnCopiarPic.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCopiarPic.Location = new Point(599, 249);
+            btnCopiarPic.Name = "btnCopiarPic";
+            btnCopiarPic.Size = new Size(133, 39);
+            btnCopiarPic.TabIndex = 27;
+            btnCopiarPic.Text = "Guardar imagen";
+            btnCopiarPic.UseVisualStyleBackColor = true;
+            btnCopiarPic.Click += btnCopiarPic_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(143, 391);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(133, 37);
+            btnCancelar.TabIndex = 28;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(266, 8);
+            label1.Name = "label1";
+            label1.Size = new Size(283, 32);
+            label1.TabIndex = 29;
+            label1.Text = "Registro de nuevo libro";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(601, 310);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 30;
+            label2.Text = "label2";
             // 
             // RegistroLibros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(764, 440);
-            this.Controls.Add(this.btnSalir2);
-            this.Controls.Add(this.gbRegistroLibros);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dgvRegistrosTotales);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Name = "RegistroLibros";
-            this.Text = "la";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erperror)).EndInit();
-            this.gbRegistroLibros.ResumeLayout(false);
-            this.gbRegistroLibros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistrosTotales)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(764, 440);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnSeleccionPic);
+            Controls.Add(btnCopiarPic);
+            Controls.Add(btnRegistrar);
+            Controls.Add(gbRegistroLibros);
+            Controls.Add(dgvRegistrosTotales);
+            Controls.Add(boxPicture);
+            ForeColor = SystemColors.ControlText;
+            Name = "RegistroLibros";
+            Text = "la";
+            TransparencyKey = Color.FromArgb(255, 192, 192);
+            ((System.ComponentModel.ISupportInitialize)erperror).EndInit();
+            gbRegistroLibros.ResumeLayout(false);
+            gbRegistroLibros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRegistrosTotales).EndInit();
+            ((System.ComponentModel.ISupportInitialize)boxPicture).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private ToolStrip toolStrip1;
-        private ToolStripLabel tsleliminar;
-        private ToolStripLabel tslbuscar;
-        private ToolStripLabel tslRegresar;
         private ErrorProvider erperror;
         private GroupBox gbRegistroLibros;
         private Button btnRegistrar;
@@ -322,6 +336,11 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn column5;
         private TextBox txtEditorial;
-        private Button btnSalir2;
+        private Button btnSeleccionPic;
+        private Label label1;
+        private Button btnCancelar;
+        private Button btnCopiarPic;
+        private PictureBox boxPicture;
+        private Label label2;
     }
 }
