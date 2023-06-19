@@ -11,7 +11,7 @@ namespace Software_Libreria
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new WindowLogin());
+            Application.Run(new Register());
 
             Cliente cliente1 = new Cliente("Lucia", 48, "12456789", "Calle1", "08004564");
             Cliente cliente2 = new Cliente("Argel", 48, "78", "Calle2", "15487931");
