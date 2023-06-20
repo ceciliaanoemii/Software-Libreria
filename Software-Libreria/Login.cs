@@ -52,5 +52,10 @@ namespace Software_Libreria
             using (WindowDashboard winDashboard = new WindowDashboard(nombreUsuario.Text, contrasenia.Text))
                 winDashboard.ShowDialog();
         }
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            using (WindowDashboard winDashboard = new WindowDashboard(nombreUsuario.Text, contrasenia.Text))
+                winDashboard.ShowDialog();
+        }
     }
 }

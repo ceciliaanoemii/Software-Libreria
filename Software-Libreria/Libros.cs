@@ -34,10 +34,13 @@ namespace Software_Libreria
         {
 
             InitializeComponent();
+
         }
         public VentanaLibros(List<VentanaLibros> l)
 
         {
+
+
             InitializeComponent();
             lista_libros = l;
 

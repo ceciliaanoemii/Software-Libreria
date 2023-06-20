@@ -21,9 +21,46 @@ namespace Software_Libreria
             InitializeComponent();
             listaLibros = lista_libros;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void slregistrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void tslsalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txttitulo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
         public void AgregarLibro(VentanaLibros libro)
         {

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            erperror = new ErrorProvider(components);
             gbRegistroLibros = new GroupBox();
             txtEditorial = new TextBox();
             txtprecio = new TextBox();
@@ -62,6 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             SuspendLayout();
             // 
+            // erperror
+            // 
+            erperror.ContainerControl = this;
+            // 
             // gbRegistroLibros
             // 
             gbRegistroLibros.Controls.Add(txtEditorial);
@@ -81,6 +86,7 @@
             gbRegistroLibros.TabIndex = 14;
             gbRegistroLibros.TabStop = false;
             gbRegistroLibros.Text = "Registro de Libros";
+            gbRegistroLibros.Enter += groupBox1_Enter;
             // 
             // txtEditorial
             // 
@@ -194,6 +200,7 @@
             dgvRegistrosTotales.RowTemplate.Height = 25;
             dgvRegistrosTotales.Size = new Size(512, 137);
             dgvRegistrosTotales.TabIndex = 10;
+            dgvRegistrosTotales.CellContentClick += dataGridView1_CellContentClick;
             // 
             // column1
             // 
@@ -324,6 +331,7 @@
         }
 
         #endregion
+        private ErrorProvider erperror;
         private GroupBox gbRegistroLibros;
         private Button btnRegistrar;
         private TextBox txtprecio;

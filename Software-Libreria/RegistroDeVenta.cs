@@ -18,6 +18,7 @@ namespace Software_Libreria
         {
             InitializeComponent();
         }
+
         private void RegistroDeVenta_Load(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Today.Date.ToString("D");
