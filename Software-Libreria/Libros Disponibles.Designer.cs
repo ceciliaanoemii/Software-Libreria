@@ -35,6 +35,7 @@
             Editorial = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Portada = new DataGridViewImageColumn();
+            txtBusqueda = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridLibro).BeginInit();
             SuspendLayout();
             // 
@@ -83,17 +84,27 @@
             Portada.Name = "Portada";
             Portada.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
+            // txtBusqueda
+            // 
+            txtBusqueda.Location = new Point(72, 116);
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.Size = new Size(100, 23);
+            txtBusqueda.TabIndex = 1;
+        //    txtBusqueda.TextChanged += textBox1_TextChanged;
+            // 
             // LibrosDisponibles
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtBusqueda);
             Controls.Add(dataGridLibro);
             Name = "LibrosDisponibles";
             Text = "Libros Disponibles";
             Load += LibrosDisponibles_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridLibro).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -105,5 +116,6 @@
         private DataGridViewTextBoxColumn Editorial;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewImageColumn Portada;
+        private TextBox txtBusqueda;
     }
 }

@@ -48,5 +48,19 @@ namespace Software_Libreria
         {
 
         }
+        /*0
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<VentanaLibros> datos = Lista_libros.FindAll(busqueda());
+        }
+
+        public bool busqueda()
+        {
+
+            if (txtBusqueda.Text == '')
+            {
+                
+            }
+        }*/
     }
 }

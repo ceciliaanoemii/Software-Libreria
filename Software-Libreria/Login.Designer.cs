@@ -88,7 +88,6 @@
             this.nombreUsuario.PlaceholderText = "Ingresar nombre";
             this.nombreUsuario.Size = new System.Drawing.Size(192, 29);
             this.nombreUsuario.TabIndex = 3;
-            this.nombreUsuario.TextChanged += new System.EventHandler(this.nombreUsuario_TextChanged_1);
             // 
             // panel1
             // 
