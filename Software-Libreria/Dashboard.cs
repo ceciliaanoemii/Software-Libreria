@@ -18,6 +18,7 @@ namespace Software_Libreria
         public WindowDashboard(string usuario, string contrasenia)
         {
             InitializeComponent();
+            libros_precargados();
             nombre_vendedor = usuario;
             contrasenia_vendedor = contrasenia;
 
@@ -36,6 +37,7 @@ namespace Software_Libreria
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
+            
             using (VentanaLibros ventanaLibros = new VentanaLibros(lista_libros))
                 ventanaLibros.ShowDialog();
         }
@@ -51,10 +53,24 @@ namespace Software_Libreria
             this.Close();
         }
 
+        public void libros_precargados()
+        {
+            var libro1 = new VentanaLibros("1", "Harry Potter", "J. K. Rowling", "Salamandra", 9000);
+
+            lista_libros.Add(libro1);
+            libro1 = new VentanaLibros("2", "El señor de los Anillo", "Tolkien", "Salamandra", 7000);
+            lista_libros.Add(libro1);
+            libro1 = new VentanaLibros("3", "Crónica de una muerte anunciada", "Gabriel Garcia Marquez", "Columbia", 10000);
+            lista_libros.Add(libro1);
+            libro1 = new VentanaLibros("4", "Ensayo de la Ceguera", "Jose Saramago", "Universal", 6000);
+            lista_libros.Add(libro1);
+        }
+
         private void btnClients_Click(object sender, EventArgs e)
         {
             using (VentanaCliente ventanaClientes = new VentanaCliente())
                 ventanaClientes.ShowDialog();
         }
+
     }
 }

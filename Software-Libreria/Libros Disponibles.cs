@@ -19,10 +19,10 @@ namespace Software_Libreria
             Lista_libros = Lista_Libros;
         }
 
-        public void MostrarLibro()
+        public void MostrarLibro(List<VentanaLibros> l)
         {
 
-            foreach (var item in Lista_libros)
+            foreach (var item in l)
             {
                 int i = dataGridLibro.Rows.Add();
                 dataGridLibro.Rows[i].Cells[0].Value = item.getIdLibro();
@@ -41,26 +41,39 @@ namespace Software_Libreria
 
         private void LibrosDisponibles_Load(object sender, EventArgs e)
         {
-            MostrarLibro();
+            MostrarLibro(Lista_libros);
+
         }
 
         private void dataGridLibro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        /*0
-        private void textBox1_TextChanged(object sender, EventArgs e)
+
+        public List<VentanaLibros> BuscarLibro()
         {
-            List<VentanaLibros> datos = Lista_libros.FindAll(busqueda());
+            if (txtBusqueda.Text.Trim() != string.Empty)
+            {
+                List<VentanaLibros> librosEncontrados = Lista_libros.FindAll(libro => libro.getIdLibro().Equals(txtBusqueda.Text));
+                dataGridLibro.Rows.Clear();
+                return librosEncontrados;
+            }
+            else
+            {
+                dataGridLibro.Rows.Clear();
+                return Lista_libros;
+            }
         }
 
-        public bool busqueda()
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
+            MostrarLibro(BuscarLibro());
 
-            if (txtBusqueda.Text == '')
-            {
-                
-            }
-        }*/
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

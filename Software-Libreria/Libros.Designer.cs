@@ -31,15 +31,15 @@
             btnRegistraLibro = new Button();
             btnLibrosDisponibles = new Button();
             btnEliminarLibro = new Button();
-            prueba = new Label();
-            button1 = new Button();
+            btnRegistrar = new Button();
             SuspendLayout();
             // 
             // btnRegistraLibro
             // 
-            btnRegistraLibro.Location = new Point(118, 174);
+            btnRegistraLibro.Location = new Point(169, 290);
+            btnRegistraLibro.Margin = new Padding(4, 5, 4, 5);
             btnRegistraLibro.Name = "btnRegistraLibro";
-            btnRegistraLibro.Size = new Size(94, 42);
+            btnRegistraLibro.Size = new Size(134, 70);
             btnRegistraLibro.TabIndex = 0;
             btnRegistraLibro.Text = "Registra Libro";
             btnRegistraLibro.UseVisualStyleBackColor = true;
@@ -47,9 +47,10 @@
             // 
             // btnLibrosDisponibles
             // 
-            btnLibrosDisponibles.Location = new Point(367, 174);
+            btnLibrosDisponibles.Location = new Point(524, 290);
+            btnLibrosDisponibles.Margin = new Padding(4, 5, 4, 5);
             btnLibrosDisponibles.Name = "btnLibrosDisponibles";
-            btnLibrosDisponibles.Size = new Size(108, 42);
+            btnLibrosDisponibles.Size = new Size(154, 70);
             btnLibrosDisponibles.TabIndex = 1;
             btnLibrosDisponibles.Text = "Libros Disponibles";
             btnLibrosDisponibles.UseVisualStyleBackColor = true;
@@ -57,47 +58,39 @@
             // 
             // btnEliminarLibro
             // 
-            btnEliminarLibro.Location = new Point(603, 174);
+            btnEliminarLibro.Location = new Point(861, 290);
+            btnEliminarLibro.Margin = new Padding(4, 5, 4, 5);
             btnEliminarLibro.Name = "btnEliminarLibro";
-            btnEliminarLibro.Size = new Size(94, 42);
+            btnEliminarLibro.Size = new Size(134, 70);
             btnEliminarLibro.TabIndex = 2;
             btnEliminarLibro.Text = "Eliminar Libros";
             btnEliminarLibro.UseVisualStyleBackColor = true;
             // 
-            // prueba
+            // btnRegistrar
             // 
-            prueba.AutoSize = true;
-            prueba.Location = new Point(353, 302);
-            prueba.Name = "prueba";
-            prueba.Size = new Size(38, 15);
-            prueba.TabIndex = 3;
-            prueba.Text = "label1";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(455, 288);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 42);
-            button1.TabIndex = 4;
-            button1.Text = "prueba";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnRegistrar.Location = new Point(74, 651);
+            btnRegistrar.Margin = new Padding(4, 5, 4, 5);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(134, 70);
+            btnRegistrar.TabIndex = 4;
+            btnRegistrar.Text = "Regresar";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += button1_Click;
             // 
             // VentanaLibros
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Controls.Add(prueba);
+            ClientSize = new Size(1143, 750);
+            Controls.Add(btnRegistrar);
             Controls.Add(btnEliminarLibro);
             Controls.Add(btnLibrosDisponibles);
             Controls.Add(btnRegistraLibro);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "VentanaLibros";
             Text = "Ventana Libros";
             Load += VentanaLibros_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -106,6 +99,6 @@
         private Button btnLibrosDisponibles;
         private Button btnEliminarLibro;
         private Label prueba;
-        private Button button1;
+        private Button btnRegistrar;
     }
 }
