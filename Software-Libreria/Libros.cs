@@ -55,19 +55,6 @@ namespace Software_Libreria
             precio = p;
         }
 
-        public void libros_precargados()
-        {
-            var libro1 = new VentanaLibros("1", "Harry Potter", "J. K. Rowling", "Salamandra", 9000);
-
-            lista_libros.Add(libro1);
-            libro1 = new VentanaLibros("2", "El señor de los Anillo", "Tolkien", "Salamandra", 7000);
-            lista_libros.Add(libro1);
-            libro1 = new VentanaLibros("3", "Crónica de una muerte anunciada", "Gabriel Garcia Marquez", "Columbia", 10000);
-            lista_libros.Add(libro1);
-            libro1 = new VentanaLibros("4", "Ensayo de la Ceguera", "Jose Saramago", "Universal", 6000);
-            lista_libros.Add(libro1);
-        }
-
         public string getIdLibro()
         {
             return idLibro;
@@ -97,16 +84,13 @@ namespace Software_Libreria
 
         private void VentanaLibros_Load(object sender, EventArgs e)
         {
-            libros_precargados();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
-            foreach (var item in lista_libros)
-            {
-                prueba.Text = item.getTitulo();
-            }
+
+            this.Close();
         }
 
         private void btnLibrosDisponibles_Click(object sender, EventArgs e)
