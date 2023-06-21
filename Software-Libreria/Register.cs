@@ -12,16 +12,22 @@ namespace Software_Libreria
 {
     public partial class Register : Form
     {
+        string contrasenia = "Admin1";
         public Register()
         {
             InitializeComponent();
         }
         private void controlBotones()
         {
+            if(controlUsuario()&&controlContrasenia() ) 
+            { btnIngresar.Enabled = true; }
+        }
+        private bool controlUsuario()
+        {
             if (txtUsuario.Text.Trim() != string.Empty && txtUsuario.Text.All(Char.IsLetter))
             {
-                btnIngresar.Enabled = true;
                 errorProvider1.SetError(txtUsuario, "");
+                return true;
             }
             else
             {
@@ -33,20 +39,45 @@ namespace Software_Libreria
                 {
                     errorProvider1.SetError(txtUsuario, "Debe introducir su nombre");
                 }
-                btnIngresar.Enabled = false;
                 txtUsuario.Focus();
+                return false;
             }
-
         }
+        private bool controlContrasenia()  
+        {
+            if (txtContrasenia.Text.Trim() != string.Empty && txtContrasenia.Text.Equals(contrasenia) )
+            {
+                errorProvider2.SetError(txtContrasenia, "");
+                return true;
 
+            }
+            else
+            {
+                if(!txtContrasenia.Text.All(Char.IsLetter))
+                {
+                errorProvider2.SetError(txtContrasenia, "Contraseña incorrecta");
 
+                }
+                else
+                {
+                    errorProvider2.SetError(txtContrasenia, "Debe introducir su contraseña");
+                }
+                txtContrasenia.Focus();
+                return false;
 
+            }
+        }
         private void Register_Load(object sender, EventArgs e)
         {
             btnIngresar.Enabled = false;
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            controlUsuario();
+
+        }
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
         {
             controlBotones();
         }
@@ -57,9 +88,5 @@ namespace Software_Libreria
                 winDashboard.ShowDialog();
         }
 
-        private void txtContrasenia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

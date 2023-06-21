@@ -35,7 +35,9 @@
             label1 = new Label();
             label2 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             SuspendLayout();
             // 
             // btnIngresar
@@ -87,6 +89,10 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -101,6 +107,7 @@
             Text = "LogIn";
             Load += Register_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,5 +120,6 @@
         private Label label1;
         private Label label2;
         private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
     }
 }
