@@ -13,6 +13,8 @@ namespace Software_Libreria
     public partial class Register : Form
     {
         string contrasenia = "Admin1";
+        string usuario = "Admin";
+
         public Register()
         {
             InitializeComponent();
@@ -20,11 +22,14 @@ namespace Software_Libreria
         private void controlBotones()
         {
             if(controlUsuario()&&controlContrasenia() ) 
-            { btnIngresar.Enabled = true; }
+            { 
+                btnIngresar.Enabled = true;
+                MessageBox.Show("Usuario correcto, puede ingresar");
+            }
         }
         private bool controlUsuario()
         {
-            if (txtUsuario.Text.Trim() != string.Empty && txtUsuario.Text.All(Char.IsLetter))
+            if (txtUsuario.Text.Trim() != string.Empty && txtUsuario.Text.All(Char.IsLetter) && txtUsuario.Text == usuario)
             {
                 errorProvider1.SetError(txtUsuario, "");
                 return true;
@@ -33,7 +38,7 @@ namespace Software_Libreria
             {
                 if (!txtUsuario.Text.All(Char.IsLetter))
                 {
-                    errorProvider1.SetError(txtUsuario, "El nombre sólo debe contener letras");
+                    errorProvider1.SetError(txtUsuario, "El nombre sólo debe contener letras sin espacios");
                 }
                 else
                 {
@@ -55,7 +60,7 @@ namespace Software_Libreria
             {
                 if(!txtContrasenia.Text.All(Char.IsLetter))
                 {
-                errorProvider2.SetError(txtContrasenia, "Contraseña incorrecta");
+                errorProvider2.SetError(txtContrasenia, "Los datos son incorrectos");
 
                 }
                 else
