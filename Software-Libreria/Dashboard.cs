@@ -13,14 +13,12 @@ namespace Software_Libreria
     public partial class WindowDashboard : Form
     {
         string nombre_vendedor;
-        string contrasenia_vendedor;
         List<VentanaLibros> lista_libros = new List<VentanaLibros>();
         public WindowDashboard(string usuario, string contrasenia)
         {
             InitializeComponent();
             libros_precargados();
             nombre_vendedor = usuario;
-            contrasenia_vendedor = contrasenia;
 
         }
 
