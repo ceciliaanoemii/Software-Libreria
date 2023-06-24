@@ -20,16 +20,13 @@ namespace Software_Libreria
         double precio = 0;
         List<VentanaLibros> Lista_libros;
 
-        public RegistroDeVenta(List<VentanaLibros> lista_libros)
-        List<VentanaLibros> Lista_libros;
-        VentanaLibros libro_seleccionado = new VentanaLibros("", "", "", "", 0);
         double subtotal = 0;
         double total = 0;
         double total_final = 0;
+        VentanaLibros libro_seleccionado = new VentanaLibros("", "", "", "", 0);
         public RegistroDeVenta(List<VentanaLibros> Lista_Libros)
         {
             InitializeComponent();
-            Lista_libros = lista_libros;
             Lista_libros = Lista_Libros;
         }
 
@@ -129,10 +126,8 @@ namespace Software_Libreria
                 libro_seleccionado = libro_aux;
             }
         }
-
-        private void btnExportarPDF_Click(object sender, EventArgs e)
-
-
+        //Exportamos PDF
+        private void btnExportarPDF_Click_1(object sender, EventArgs e)
         {
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyy-HHmmss")) + ".pdf";
@@ -205,8 +200,6 @@ namespace Software_Libreria
             pw.Close();
 
             MessageBox.Show("Documento generado satisfactoriamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
 
         }
 
