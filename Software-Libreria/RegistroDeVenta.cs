@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using iTextSharp.text;
+using System.IO;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.Windows.Forms.Design;
 
 namespace Software_Libreria
 {
@@ -41,7 +48,7 @@ namespace Software_Libreria
             this.Close();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        public void btnRegistrar_Click(object sender, EventArgs e)
         {
             //validando
             if (comboSeleccionLibro.SelectedIndex == -1)
@@ -72,16 +79,16 @@ namespace Software_Libreria
                 double precioFinal = subtotal - descuento + recargo;
 
                 //impresión de resultados
-                ListViewItem fila = new ListViewItem(libro);
-                fila.SubItems.Add(cantidad.ToString());
-                fila.SubItems.Add(precio.ToString());
-                fila.SubItems.Add(tipo);
-                fila.SubItems.Add(descuento.ToString());
-                fila.SubItems.Add(recargo.ToString());
-                fila.SubItems.Add(precioFinal.ToString());
+                ListViewItem Unafila = new ListViewItem(libro);
+                Unafila.SubItems.Add(cantidad.ToString());
+                Unafila.SubItems.Add(precio.ToString());
+                Unafila.SubItems.Add(tipo);
+                Unafila.SubItems.Add(descuento.ToString());
+                Unafila.SubItems.Add(recargo.ToString());
+                Unafila.SubItems.Add(precioFinal.ToString());
 
 
-                listVenta.Items.Add(fila);
+                listVenta.Items.Add(Unafila);
                 btnCancelar_Click(sender, e);
 
 
@@ -89,7 +96,7 @@ namespace Software_Libreria
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        public void btnCancelar_Click(object sender, EventArgs e)
         {
             comboSeleccionLibro.Text = "(Seleccione Producto)";
             comboSeleccionTipoPago.Text = "(Seleccione Tipo)";
@@ -97,5 +104,74 @@ namespace Software_Libreria
             lblPrecio.Text = (0).ToString("C");
             comboSeleccionLibro.Focus();
         }
+
+        private void btnGenFac_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyyHHmmss")) + ".pdf";
+            savefile.ShowDialog();
+
+
+            FileStream fs = new FileStream(savefile.FileName, FileMode.Create);
+            Document doc = new Document(PageSize.LETTER, 5, 5, 7, 7);
+            PdfWriter pw = PdfWriter.GetInstance(doc, fs);
+
+            doc.Open();
+
+            //titulo y autor
+            doc.AddAuthor("Tu libreria");
+            doc.AddTitle("Pdf Gernerado");
+
+            // fuente
+
+            iTextSharp.text.Font standarFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+            // encabezado
+            doc.Add(new Paragraph("Titulo del Documento"));
+            doc.Add(Chunk.NEWLINE);
+
+            // encabezado columna
+
+            PdfPTable tblEjemplo = new PdfPTable(3);
+            tblEjemplo.WidthPercentage = 80;
+
+            //Titulo Columnas
+            PdfPCell clnombre = new PdfPCell(new Phrase("Nombre Libro", standarFont));
+            clnombre.BorderWidth = 0;
+            clnombre.BorderWidthBottom = 0.75f;
+
+            PdfPCell cltotal = new PdfPCell(new Phrase("Cantidad", standarFont));
+            clnombre.BorderWidth = 0;
+            clnombre.BorderWidthBottom = 0.75f;
+
+            PdfPCell clcantidad = new PdfPCell(new Phrase("Total", standarFont));
+            clnombre.BorderWidth = 0;
+            clnombre.BorderWidthBottom = 0.75f;
+
+
+            tblEjemplo.AddCell(clnombre);
+            tblEjemplo.AddCell(cltotal);
+            tblEjemplo.AddCell(clcantidad);
+
+            doc.Add(tblEjemplo);
+
+            doc.Close();
+            pw.Close();
+
+            MessageBox.Show("Documento creado con exito");
+
+
+
+
+
+
+
+
+
+
+        }
+
+
     }
 }
