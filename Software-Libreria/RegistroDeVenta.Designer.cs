@@ -51,6 +51,7 @@
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
+            btnExportarPDF = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -238,11 +239,22 @@
             // 
             columnHeader7.Text = "Precio Final";
             // 
+            // btnExportarPDF
+            // 
+            btnExportarPDF.Location = new Point(538, 415);
+            btnExportarPDF.Name = "btnExportarPDF";
+            btnExportarPDF.Size = new Size(113, 23);
+            btnExportarPDF.TabIndex = 13;
+            btnExportarPDF.Text = "Exportar PDF";
+            btnExportarPDF.UseVisualStyleBackColor = true;
+            btnExportarPDF.Click += btnExportarPDF_Click;
+            // 
             // RegistroDeVenta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExportarPDF);
             Controls.Add(listVenta);
             Controls.Add(groupBox1);
             Controls.Add(btnSalir);
@@ -285,5 +297,6 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
+        private Button btnExportarPDF;
     }
 }

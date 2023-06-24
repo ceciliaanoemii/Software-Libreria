@@ -44,7 +44,7 @@ namespace Software_Libreria
 
         private void btnSales_Click_1(object sender, EventArgs e)
         {
-            using (RegistroDeVenta VentanaVenta = new RegistroDeVenta())
+            using (RegistroDeVenta VentanaVenta = new RegistroDeVenta(lista_libros))
                 VentanaVenta.ShowDialog();
         }
 

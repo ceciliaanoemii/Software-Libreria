@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Collections;
+
 
 namespace Software_Libreria
 {
     public partial class RegistroDeVenta : Form
     {
         double precio = 0;
+        List<VentanaLibros> Lista_libros;
 
-        public RegistroDeVenta()
+        public RegistroDeVenta(List<VentanaLibros> lista_libros)
         {
             InitializeComponent();
+            Lista_libros = lista_libros;
         }
 
         private void RegistroDeVenta_Load(object sender, EventArgs e)
@@ -96,6 +103,86 @@ namespace Software_Libreria
             txtCantidad.Clear();
             lblPrecio.Text = (0).ToString("C");
             comboSeleccionLibro.Focus();
+        }
+
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+
+
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyy-HHmmss")) + ".pdf";
+            savefile.ShowDialog();
+
+
+            FileStream fs = new FileStream(savefile.FileName, FileMode.Create);
+            Document doc = new Document(PageSize.LETTER, 5, 5, 7, 7);
+            PdfWriter pw = PdfWriter.GetInstance(doc, fs);
+
+            doc.Open();
+
+            //titulo y autor
+            doc.AddAuthor("Newbie-Coders");
+            doc.AddTitle("Factura");
+
+            // definir la fuente
+            iTextSharp.text.Font standarFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+            //Encabezado
+            doc.Add(new Paragraph("Título factura"));
+            doc.Add(new Paragraph(DateTime.Today.Date.ToString("D")));
+
+            doc.Add(Chunk.NEWLINE);
+
+            //Encabezado Columnas
+            PdfPTable tblFactura = new PdfPTable(3);
+            tblFactura.WidthPercentage = 100;
+
+            //configuro titulo de columnas
+            PdfPCell colNombre = new PdfPCell(new Phrase("Nombre Libro", standarFont));
+            colNombre.BorderWidth = 0;
+            colNombre.BorderWidthBottom = 0.75f;
+
+            PdfPCell colCantidad = new PdfPCell(new Phrase("Cantidad", standarFont));
+            colNombre.BorderWidth = 1;
+            colNombre.BorderWidthBottom = 0.75f;
+
+            PdfPCell colPrecio = new PdfPCell(new Phrase("Precio", standarFont));
+            colNombre.BorderWidth = 1;
+            colNombre.BorderWidthBottom = 0.75f;
+
+            tblFactura.AddCell(colNombre);
+            tblFactura.AddCell(colCantidad);
+            tblFactura.AddCell(colPrecio);
+
+
+            //Agregando datos
+
+            foreach (var libro in Lista_libros)
+            {
+                colNombre = new PdfPCell(new Phrase(libro.getTitulo(), standarFont));
+                colNombre.BorderWidth = 0;
+
+                colCantidad = new PdfPCell(new Phrase(libro.getIdLibro(), standarFont));
+                colNombre.BorderWidth = 0;
+
+                colPrecio = new PdfPCell(new Phrase(libro.getPrecio().ToString(), standarFont));
+                colPrecio.BorderWidth = 0;
+
+                tblFactura.AddCell(colNombre);
+                tblFactura.AddCell(colCantidad);
+                tblFactura.AddCell(colPrecio);
+
+
+            }
+            doc.Add(tblFactura);
+
+            doc.Close();
+            pw.Close();
+
+            MessageBox.Show("Documento generado satisfactoriamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
         }
     }
 }
