@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -68,6 +69,7 @@ namespace Software_Libreria
             {
                 //procesar calculos
                 double descuento = 0;
+                MostrarLibro();
 
                 total_final = total_final + subtotal;
 
@@ -82,7 +84,6 @@ namespace Software_Libreria
                 }
                 lblDescuento.Text = descuento.ToString("C");
                 lblTotal.Text = total.ToString("C");
-                MostrarLibro();
 
                 lblPrecio.Text = (0).ToString("C");
 
