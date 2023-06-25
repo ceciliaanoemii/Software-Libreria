@@ -97,15 +97,6 @@
             label4.TabIndex = 3;
             label4.Text = "Seleccione libro:";
             // 
-            // label5
-            // 
-           /* label5.AutoSize = true;
-            label5.Location = new Point(7, 72);
-            label5.Name = "label5";
-            label5.Size = new Size(104, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Seleccione cliente:";*/
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -256,12 +247,12 @@
             // 
             dataGridLibro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridLibro.Columns.AddRange(new DataGridViewColumn[] { Cantidad, Titulo, dataGridViewTextBoxColumn1, Importe });
-            dataGridLibro.Location = new Point(148, 224);
+            dataGridLibro.Location = new Point(71, 222);
             dataGridLibro.Margin = new Padding(2);
             dataGridLibro.Name = "dataGridLibro";
             dataGridLibro.RowHeadersWidth = 62;
             dataGridLibro.RowTemplate.Height = 33;
-            dataGridLibro.Size = new Size(468, 135);
+            dataGridLibro.Size = new Size(664, 135);
             dataGridLibro.TabIndex = 12;
             // 
             // Cantidad

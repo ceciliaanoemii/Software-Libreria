@@ -30,14 +30,13 @@
         {
             btnRegistraLibro = new Button();
             btnLibrosDisponibles = new Button();
-            btnEliminarLibro = new Button();
             btnRegistrar = new Button();
             SuspendLayout();
             // 
             // btnRegistraLibro
             // 
             btnRegistraLibro.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRegistraLibro.Location = new Point(158, 102);
+            btnRegistraLibro.Location = new Point(181, 123);
             btnRegistraLibro.Name = "btnRegistraLibro";
             btnRegistraLibro.Size = new Size(116, 68);
             btnRegistraLibro.TabIndex = 0;
@@ -48,23 +47,13 @@
             // btnLibrosDisponibles
             // 
             btnLibrosDisponibles.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLibrosDisponibles.Location = new Point(372, 102);
+            btnLibrosDisponibles.Location = new Point(458, 123);
             btnLibrosDisponibles.Name = "btnLibrosDisponibles";
             btnLibrosDisponibles.Size = new Size(120, 68);
             btnLibrosDisponibles.TabIndex = 1;
             btnLibrosDisponibles.Text = "Libros Disponibles";
             btnLibrosDisponibles.UseVisualStyleBackColor = true;
             btnLibrosDisponibles.Click += btnLibrosDisponibles_Click;
-            // 
-            // btnEliminarLibro
-            // 
-            btnEliminarLibro.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminarLibro.Location = new Point(585, 102);
-            btnEliminarLibro.Name = "btnEliminarLibro";
-            btnEliminarLibro.Size = new Size(120, 68);
-            btnEliminarLibro.TabIndex = 2;
-            btnEliminarLibro.Text = "Eliminar Libros";
-            btnEliminarLibro.UseVisualStyleBackColor = true;
             // 
             // btnRegistrar
             // 
@@ -82,7 +71,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 449);
             Controls.Add(btnRegistrar);
-            Controls.Add(btnEliminarLibro);
             Controls.Add(btnLibrosDisponibles);
             Controls.Add(btnRegistraLibro);
             Name = "VentanaLibros";
@@ -95,7 +83,6 @@
 
         private Button btnRegistraLibro;
         private Button btnLibrosDisponibles;
-        private Button btnEliminarLibro;
         private Label prueba;
         private Button btnRegistrar;
     }

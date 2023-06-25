@@ -139,9 +139,10 @@ namespace Software_Libreria
             }
         }
 
-        public Venta llenarFactura() {
+        public Venta llenarFactura()
+        {
 
-            Venta venta = new Venta(DateTime.Now.ToString("ddMMyyyyHHmmss"), Lista_Ejemplares, DateTime.Today.Date.ToString("D"),total_final, total);
+            Venta venta = new Venta(DateTime.Now.ToString("ddMMyyyyHHmmss"), Lista_Ejemplares, DateTime.Today.Date.ToString("D"), total_final, total);
             return venta;
         }
 
@@ -224,7 +225,7 @@ namespace Software_Libreria
                 colNombre.BorderWidthBottom = 0.75f;
 
 
-                colImporte = new PdfPCell(new Phrase((libro.getPrecio()*libro.getCantidad()).ToString("C"), standarFont));
+                colImporte = new PdfPCell(new Phrase((libro.getPrecio() * libro.getCantidad()).ToString("C"), standarFont));
                 colNombre.BorderWidth = 1;
                 colNombre.BorderWidthBottom = 0.75f;
 
@@ -236,11 +237,11 @@ namespace Software_Libreria
             }
 
             doc.Add(tblFactura);
-            
+
             doc.Add(Chunk.NEWLINE);
 
-            doc.Add(new Paragraph("Descuento: " + (llenarFactura().getTotal()-llenarFactura().getDescuento()).ToString("C")));
-           
+            doc.Add(new Paragraph("Descuento: " + (llenarFactura().getTotal() - llenarFactura().getDescuento()).ToString("C")));
+
             string col_total = (llenarFactura().getDescuento().ToString("C"));
             doc.Add(new Paragraph("Total: " + col_total));
 
@@ -318,7 +319,7 @@ namespace Software_Libreria
         public string getTitulo() { return titulo; }
         public double getPrecio() { return precio; }
         public int getCantidad() { return cantidad; }
-       
+
 
     }
 }
