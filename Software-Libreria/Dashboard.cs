@@ -14,7 +14,10 @@ namespace Software_Libreria
     {
         string nombre_vendedor;
         List<VentanaLibros> lista_libros = new List<VentanaLibros>();
+
+        List<VentanaCliente> lista_clientes= new List<VentanaCliente>();
         List<venta> lista_venta = new List<venta>();
+
         public WindowDashboard(string usuario, string contrasenia)
         {
             InitializeComponent();
@@ -67,7 +70,7 @@ namespace Software_Libreria
 
         private void btnClients_Click(object sender, EventArgs e)
         {
-            using (VentanaCliente ventanaClientes = new VentanaCliente())
+            using (VentanaCliente ventanaClientes = new VentanaCliente(lista_clientes))
                 ventanaClientes.ShowDialog();
         }
 
