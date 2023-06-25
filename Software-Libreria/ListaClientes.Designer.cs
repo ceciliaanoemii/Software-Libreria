@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaClientes));
             label1 = new Label();
             label2 = new Label();
             txtdni = new TextBox();
@@ -42,27 +43,31 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(206, 18);
+            label1.Font = new Font("Bauhaus 93", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(157, 21);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(357, 32);
+            label1.Size = new Size(689, 54);
             label1.TabIndex = 0;
             label1.Text = "Búsqueda de Clientes por DNI";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(79, 101);
+            label2.Font = new Font("Bauhaus 93", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(301, 126);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(135, 15);
+            label2.Size = new Size(328, 32);
             label2.TabIndex = 1;
             label2.Text = "Ingrese el Dni del cliente";
             // 
             // txtdni
             // 
-            txtdni.Location = new Point(79, 119);
+            txtdni.Location = new Point(363, 173);
+            txtdni.Margin = new Padding(4, 5, 4, 5);
             txtdni.Name = "txtdni";
-            txtdni.Size = new Size(135, 23);
+            txtdni.Size = new Size(191, 31);
             txtdni.TabIndex = 2;
             txtdni.TextChanged += txtdni_TextChanged;
             // 
@@ -70,32 +75,42 @@
             // 
             dataGridListClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridListClientes.Columns.AddRange(new DataGridViewColumn[] { Dni, Nombre, Telefono });
-            dataGridListClientes.Location = new Point(168, 198);
+            dataGridListClientes.Location = new Point(231, 234);
+            dataGridListClientes.Margin = new Padding(4, 5, 4, 5);
             dataGridListClientes.Name = "dataGridListClientes";
+            dataGridListClientes.RowHeadersWidth = 62;
             dataGridListClientes.RowTemplate.Height = 25;
-            dataGridListClientes.Size = new Size(337, 165);
+            dataGridListClientes.Size = new Size(481, 88);
             dataGridListClientes.TabIndex = 3;
             // 
             // Dni
             // 
             Dni.HeaderText = "Dni";
+            Dni.MinimumWidth = 8;
             Dni.Name = "Dni";
+            Dni.Width = 150;
             // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 8;
             Nombre.Name = "Nombre";
+            Nombre.Width = 150;
             // 
             // Telefono
             // 
             Telefono.HeaderText = "Telefono";
+            Telefono.MinimumWidth = 8;
             Telefono.Name = "Telefono";
+            Telefono.Width = 150;
             // 
             // btnRegresar
             // 
-            btnRegresar.Location = new Point(607, 383);
+            btnRegresar.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btnRegresar.Location = new Point(734, 356);
+            btnRegresar.Margin = new Padding(4, 5, 4, 5);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(75, 23);
+            btnRegresar.Size = new Size(107, 38);
             btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
@@ -103,14 +118,17 @@
             // 
             // ListaClientes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(940, 482);
             Controls.Add(btnRegresar);
             Controls.Add(dataGridListClientes);
             Controls.Add(txtdni);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ListaClientes";
             Text = "ListaClientes";
             Load += ListaClientes_Load;

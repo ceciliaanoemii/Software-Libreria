@@ -98,6 +98,11 @@ namespace Software_Libreria
             LibrosDisponibles ventanaLibrosDisponibles = new LibrosDisponibles(lista_libros);
             ventanaLibrosDisponibles.ShowDialog();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

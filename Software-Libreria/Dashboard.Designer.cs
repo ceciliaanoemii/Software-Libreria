@@ -37,15 +37,16 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Bell MT", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button1.BackColor = SystemColors.ScrollBar;
+            button1.Font = new Font("Bell MT", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ActiveCaptionText;
             button1.Location = new Point(13, 24);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(109, 36);
+            button1.Size = new Size(84, 41);
             button1.TabIndex = 0;
             button1.Text = "Salir";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_2;
             // 
             // btnBooks
@@ -97,11 +98,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1120, 510);
             Controls.Add(btnSales);
             Controls.Add(button1);
             Controls.Add(btnBooks);
             Controls.Add(btnClients);
+            ForeColor = SystemColors.ActiveCaption;
             Margin = new Padding(4, 5, 4, 5);
             Name = "WindowDashboard";
             Text = "Dashboard";
