@@ -32,11 +32,12 @@
             label2 = new Label();
             txtdni = new TextBox();
             dataGridListClientes = new DataGridView();
-            label3 = new Label();
-            prueba = new Button();
             Dni = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
+            label3 = new Label();
+            prueba = new Button();
+            btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridListClientes).BeginInit();
             SuspendLayout();
             // 
@@ -77,6 +78,21 @@
             dataGridListClientes.Size = new Size(337, 82);
             dataGridListClientes.TabIndex = 3;
             // 
+            // Dni
+            // 
+            Dni.HeaderText = "Dni";
+            Dni.Name = "Dni";
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -96,26 +112,22 @@
             prueba.UseVisualStyleBackColor = true;
             prueba.Click += prueba_Click;
             // 
-            // Dni
+            // btnRegresar
             // 
-            Dni.HeaderText = "Dni";
-            Dni.Name = "Dni";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
+            btnRegresar.Location = new Point(633, 293);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(75, 23);
+            btnRegresar.TabIndex = 6;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // ListaClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnRegresar);
             Controls.Add(prueba);
             Controls.Add(label3);
             Controls.Add(dataGridListClientes);
@@ -141,5 +153,6 @@
         private DataGridViewTextBoxColumn Dni;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Telefono;
+        private Button btnRegresar;
     }
 }

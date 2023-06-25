@@ -32,7 +32,6 @@
             label2 = new Label();
             lblFecha = new Label();
             label4 = new Label();
-            label5 = new Label();
             label6 = new Label();
             label7 = new Label();
             btnCancelar = new Button();
@@ -40,7 +39,6 @@
             btnSalir = new Button();
             lblPrecio = new Label();
             groupBox1 = new GroupBox();
-            comboSeleccionTipoPago = new ComboBox();
             txtCantidad = new TextBox();
             button1 = new Button();
             labelTitulo = new Label();
@@ -95,15 +93,6 @@
             label4.Size = new Size(93, 15);
             label4.TabIndex = 3;
             label4.Text = "Seleccione libro:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(7, 72);
-            label5.Name = "label5";
-            label5.Size = new Size(136, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Seleccione tipo de pago:";
             // 
             // label6
             // 
@@ -164,7 +153,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboSeleccionTipoPago);
             groupBox1.Controls.Add(txtCantidad);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(labelTitulo);
@@ -172,7 +160,6 @@
             groupBox1.Controls.Add(lblPrecio);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label7);
             groupBox1.Location = new Point(21, 66);
             groupBox1.Name = "groupBox1";
@@ -180,16 +167,6 @@
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Control de ventas";
-            // 
-            // comboSeleccionTipoPago
-            // 
-            comboSeleccionTipoPago.FormattingEnabled = true;
-            comboSeleccionTipoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta", "MercadoPago" });
-            comboSeleccionTipoPago.Location = new Point(13, 92);
-            comboSeleccionTipoPago.Margin = new Padding(2);
-            comboSeleccionTipoPago.Name = "comboSeleccionTipoPago";
-            comboSeleccionTipoPago.Size = new Size(129, 23);
-            comboSeleccionTipoPago.TabIndex = 19;
             // 
             // txtCantidad
             // 
@@ -357,7 +334,6 @@
         private Label label2;
         private Label lblFecha;
         private Label label4;
-        private Label label5;
         private Label label6;
         private Label label7;
         private Button btnCancelar;
@@ -374,7 +350,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Importe;
         private TextBox txtCantidad;
-        private ComboBox comboSeleccionTipoPago;
         private Label label3;
         private Label lblTotal;
         private Label lblDescuento;

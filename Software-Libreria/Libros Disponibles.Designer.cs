@@ -41,6 +41,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
+            btnEliminar_Click = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridLibro).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -49,13 +50,12 @@
             // 
             dataGridLibro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridLibro.Columns.AddRange(new DataGridViewColumn[] { Id, Titulo, Autor, Editorial, Precio, Portada });
-            dataGridLibro.Location = new Point(73, 262);
-            dataGridLibro.Margin = new Padding(4, 5, 4, 5);
-            dataGridLibro.MinimumSize = new Size(0, 100);
+            dataGridLibro.Location = new Point(72, 154);
+            dataGridLibro.MinimumSize = new Size(0, 60);
             dataGridLibro.Name = "dataGridLibro";
             dataGridLibro.RowHeadersWidth = 62;
             dataGridLibro.RowTemplate.Height = 25;
-            dataGridLibro.Size = new Size(920, 250);
+            dataGridLibro.Size = new Size(644, 150);
             dataGridLibro.TabIndex = 0;
             dataGridLibro.CellContentClick += dataGridLibro_CellContentClick;
             // 
@@ -105,18 +105,18 @@
             // 
             // txtBusqueda
             // 
-            txtBusqueda.Location = new Point(103, 193);
-            txtBusqueda.Margin = new Padding(4, 5, 4, 5);
+            txtBusqueda.Location = new Point(72, 116);
             txtBusqueda.Name = "txtBusqueda";
-            txtBusqueda.Size = new Size(186, 31);
+            txtBusqueda.Size = new Size(131, 23);
             txtBusqueda.TabIndex = 1;
             txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
             // btnRegresar
             // 
-            btnRegresar.Location = new Point(123, 636);
+            btnRegresar.Location = new Point(617, 342);
+            btnRegresar.Margin = new Padding(2);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(112, 34);
+            btnRegresar.Size = new Size(78, 40);
             btnRegresar.TabIndex = 2;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
@@ -125,9 +125,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(254, 193);
+            pictureBox1.Location = new Point(178, 116);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(35, 31);
+            pictureBox1.Size = new Size(24, 19);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -135,9 +136,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(103, 163);
+            label1.Location = new Point(72, 98);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(183, 25);
+            label1.Size = new Size(119, 15);
             label1.TabIndex = 4;
             label1.Text = "Ingrese el Id del libro:";
             // 
@@ -145,24 +147,35 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(103, 57);
+            label2.Location = new Point(72, 34);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(412, 45);
+            label2.Size = new Size(282, 30);
             label2.TabIndex = 5;
             label2.Text = "Búsqueda de libros por ID";
             // 
+            // btnEliminar_Click
+            // 
+            btnEliminar_Click.Location = new Point(502, 342);
+            btnEliminar_Click.Name = "btnEliminar_Click";
+            btnEliminar_Click.Size = new Size(76, 40);
+            btnEliminar_Click.TabIndex = 6;
+            btnEliminar_Click.Text = "Eliminar libro";
+            btnEliminar_Click.UseVisualStyleBackColor = true;
+            btnEliminar_Click.Click += btnEliminar_Click_Click;
+            // 
             // LibrosDisponibles
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(800, 449);
+            Controls.Add(btnEliminar_Click);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(btnRegresar);
             Controls.Add(txtBusqueda);
             Controls.Add(dataGridLibro);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "LibrosDisponibles";
             Text = "Libros Disponibles";
             Load += LibrosDisponibles_Load;
@@ -186,5 +199,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
+        private Button btnEliminar_Click;
     }
 }

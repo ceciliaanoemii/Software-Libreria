@@ -16,9 +16,9 @@ namespace Software_Libreria
         private string dni;
         private string telefono;
         List<VentanaCliente> lista_clientes;
-        public VentanaCliente( string nombre, string dni, string telefono)
+        public VentanaCliente(string nombre, string dni, string telefono)
         {
-            
+
             this.nombre = nombre;
             this.dni = dni;
             this.telefono = telefono;
@@ -37,7 +37,7 @@ namespace Software_Libreria
             InitializeComponent();
             this.lista_clientes = lista_;
         }
-        public void setTodo( string dni, string nom, string tel)
+        public void setTodo(string dni, string nom, string tel)
         {
             this.dni = dni;
             this.nombre = nom;
@@ -74,6 +74,9 @@ namespace Software_Libreria
             cli.ShowDialog();
         }
 
-       
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

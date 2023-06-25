@@ -91,9 +91,9 @@ namespace Software_Libreria
                 }
 
                 Ejemplar_libro filaEjemplar = new Ejemplar_libro(libro_seleccionado.getIdLibro(), libro_seleccionado.getTitulo(), libro_seleccionado.getPrecio(), Convert.ToInt32(txtCantidad.Text));
-                
+
                 Lista_Ejemplares.Add(filaEjemplar);
-               
+
 
                 lblDescuento.Text = descuento.ToString("C");
                 lblTotal.Text = total.ToString("C");
@@ -113,7 +113,7 @@ namespace Software_Libreria
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             dataGridLibro.Text = "(Seleccione Producto)";
-            comboSeleccionTipoPago.Text = "(Seleccione Tipo)";
+            //comboSeleccionTipoPago.Text = "(Seleccione Tipo)";
             txtCantidad.Clear();
             lblPrecio.Text = (0).ToString("C");
             lblTotal.Text = (0).ToString("C");
@@ -227,13 +227,13 @@ namespace Software_Libreria
         private string tipoPago;
         private double descuento;
 
-        public venta (string id, List<Ejemplar_libro> ejemplares)
+        public venta(string id, List<Ejemplar_libro> ejemplares)
         {
             this.id = id;
             this.ejemplares = ejemplares;
         }
 
-        public string getId()  { return id;      }
+        public string getId() { return id; }
         public string getFecha() { return fecha; }
         public double getTotal() { return total; }
     }

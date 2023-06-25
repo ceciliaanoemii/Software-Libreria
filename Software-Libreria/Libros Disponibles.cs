@@ -75,5 +75,25 @@ namespace Software_Libreria
         {
             this.Close();
         }
+
+        private void btnEliminar_Click_Click(object sender, EventArgs e)
+        {
+           
+                if (dataGridLibro.SelectedRows.Count > 0)
+                {
+                    int selectedRowIndex = dataGridLibro.SelectedRows[0].Index;
+                    string libroId = dataGridLibro.Rows[selectedRowIndex].Cells[0].Value.ToString();
+
+                    // Eliminar el libro de la lista
+                    VentanaLibros libroEliminado = Lista_libros.Find(libro => libro.getIdLibro() == libroId);
+                    Lista_libros.Remove(libroEliminado);
+
+                    // Actualizar la visualización de libros
+                    MostrarLibro(BuscarLibro());
+
+                    // Mostrar alerta de libro eliminado
+                    MessageBox.Show("Libro eliminado correctamente.", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+        }
     }
 }
