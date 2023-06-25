@@ -16,9 +16,9 @@ namespace Software_Libreria
         private string dni;
         private string telefono;
         List<VentanaCliente> lista_clientes;
-        public VentanaCliente(string nombre, string dni, string telefono)
+        public VentanaCliente( string dni, string nombre, string telefono)
         {
-
+            this.dni = dni;
             this.nombre = nombre;
             this.telefono = telefono;
 

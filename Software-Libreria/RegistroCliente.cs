@@ -32,7 +32,41 @@ namespace Software_Libreria
         }
         private void RegistroCliente_Load(object sender, EventArgs e)
         {
+            // Suscribirse al evento TextChanged de los cuadros de texto
+            txtdni.TextChanged += ValidarCampos;
+            txtnombre.TextChanged += ValidarCampos;
+            txtcelular.TextChanged += ValidarCampos;
+
+            // Suscribirse al evento KeyPress para validar solo números
+            txtdni.KeyPress += ValidarNumeros;
+            txtcelular.KeyPress += ValidarNumeros;
+
+
+
+
+
             btnAddClient.Enabled = false;
+        }
+
+        private void ValidarCampos(object sender, EventArgs e)
+        {
+            // Verificar si todos los campos están llenos
+            bool camposLlenos = !string.IsNullOrEmpty(txtdni.Text) &&
+                                !string.IsNullOrEmpty(txtnombre.Text) &&
+                                !string.IsNullOrEmpty(txtcelular.Text);
+
+            // Habilitar o deshabilitar el botón según el estado de los campos
+            btnAddClient.Enabled = camposLlenos;
+        }
+
+        private void ValidarNumeros(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si el carácter ingresado no es un número y no es la tecla de retroceso
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Cancelar el evento para evitar que se muestre el carácter en el cuadro de texto
+                e.Handled = true;
+            }
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
@@ -51,63 +85,8 @@ namespace Software_Libreria
             txtcelular.Text = "";
         }
 
-        /*  private void controlBotones()
-          {
-              if (txtdni.Text.Trim() != string.Empty && txtdni.Text.All(Char.IsNumber))
-              {
-                  btnAddClient.Enabled = true;
-                  errorProvider1.SetError(txtdni, "");
-              }
-              else
-              {
-                  if (!txtdni.Text.All(Char.IsLetter))
-                  {
-                      errorProvider1.SetError(txtdni, "El DNI sólo debe contener números");
-                  }
-                  else
-                  {
-                      errorProvider1.SetError(txtdni, "Debe introducir un número de Documento");
-                  }
-                  btnAddClient.Enabled = false;
-                  txtdni.Focus();
-              } 
-
-          } */
-
         private void txtdni_TextChanged(object sender, EventArgs e)
         {
-            /*  if (txtdni.Text == "" && txtnombre.Text == "")
-              {
-                  btnAddClient.Enabled = false;
-              }
-              else if (txtdni.Text == "" && txtnombre.Text != "")
-              {
-                  btnAddClient.Enabled = false;
-              }
-              else if (txtdni.Text != "" && txtnombre.Text != "")
-              {
-                  btnAddClient.Enabled = true;
-              }*/
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtdni.Text, "[^0-9]"))
-            {
-                // Si se ingresan caracteres que no son números en txtdni, deshabilita el botón btnAddClient
-                btnAddClient.Enabled = false;
-            }
-            else if (string.IsNullOrEmpty(txtdni.Text) && string.IsNullOrEmpty(txtnombre.Text))
-            {
-                // Verifica si tanto txtdni como txtnombre están vacíos
-                btnAddClient.Enabled = false;
-            }
-            else if (string.IsNullOrEmpty(txtdni.Text) && !string.IsNullOrEmpty(txtnombre.Text))
-            {
-                // Verifica si txtdni está vacío pero txtnombre no
-                btnAddClient.Enabled = false;
-            }
-            else
-            {
-                // Si txtdni no está vacío y txtnombre no está vacío, habilita el botón btnAddClient
-                btnAddClient.Enabled = true;
-            }
 
 
         }
@@ -123,26 +102,12 @@ namespace Software_Libreria
 
         private void txtcelular_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtdni.Text, "[^0-9]"))
-            {
-                // Si se ingresan caracteres que no son números en txtdni, deshabilita el botón btnAddClient
-                btnAddClient.Enabled = false;
-            }
-            else if (string.IsNullOrEmpty(txtdni.Text) && string.IsNullOrEmpty(txtnombre.Text))
-            {
-                // Verifica si tanto txtdni como txtnombre están vacíos
-                btnAddClient.Enabled = false;
-            }
-            else if (string.IsNullOrEmpty(txtdni.Text) && !string.IsNullOrEmpty(txtnombre.Text))
-            {
-                // Verifica si txtdni está vacío pero txtnombre no
-                btnAddClient.Enabled = false;
-            }
-            else
-            {
-                // Si txtdni no está vacío y txtnombre no está vacío, habilita el botón btnAddClient
-                btnAddClient.Enabled = true;
-            }
+
+
+        }
+
+        private void txtnombre_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

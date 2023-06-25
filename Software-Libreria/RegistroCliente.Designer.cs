@@ -96,6 +96,7 @@
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(138, 23);
             txtnombre.TabIndex = 5;
+            txtnombre.TextChanged += txtnombre_TextChanged;
             // 
             // dgvClientes
             // 
@@ -104,7 +105,7 @@
             dgvClientes.Location = new Point(260, 197);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.Size = new Size(342, 84);
+            dgvClientes.Size = new Size(342, 143);
             dgvClientes.TabIndex = 7;
             // 
             // Column1
@@ -124,7 +125,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(278, 315);
+            button2.Location = new Point(278, 370);
             button2.Name = "button2";
             button2.Size = new Size(140, 29);
             button2.TabIndex = 8;
@@ -148,7 +149,7 @@
             // 
             // btnAddClient
             // 
-            btnAddClient.Location = new Point(478, 315);
+            btnAddClient.Location = new Point(478, 370);
             btnAddClient.Name = "btnAddClient";
             btnAddClient.Size = new Size(124, 29);
             btnAddClient.TabIndex = 11;

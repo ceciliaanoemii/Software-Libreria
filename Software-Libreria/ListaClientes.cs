@@ -57,14 +57,6 @@ namespace Software_Libreria
             mostrarCliente(clientes);
         }
 
-        private void prueba_Click(object sender, EventArgs e)
-        {
-            foreach (var item in clientes)
-            {
-                label3.Text = item.getDni();
-
-            }
-        }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {

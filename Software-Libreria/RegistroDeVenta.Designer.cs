@@ -99,12 +99,12 @@
             // 
             // label5
             // 
-            label5.AutoSize = true;
+           /* label5.AutoSize = true;
             label5.Location = new Point(7, 72);
             label5.Name = "label5";
             label5.Size = new Size(104, 15);
             label5.TabIndex = 4;
-            label5.Text = "Seleccione cliente:";
+            label5.Text = "Seleccione cliente:";*/
             // 
             // label6
             // 
