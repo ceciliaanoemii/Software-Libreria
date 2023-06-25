@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             btnIngresar = new Button();
             txtUsuario = new TextBox();
             txtContrasenia = new TextBox();
@@ -42,46 +43,57 @@
             // 
             // btnIngresar
             // 
-            btnIngresar.Location = new Point(321, 190);
+            btnIngresar.BackColor = SystemColors.ButtonHighlight;
+            btnIngresar.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btnIngresar.Location = new Point(518, 203);
+            btnIngresar.Margin = new Padding(4, 5, 4, 5);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(75, 23);
+            btnIngresar.Size = new Size(107, 38);
             btnIngresar.TabIndex = 0;
             btnIngresar.Text = "Ingresar";
-            btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.UseVisualStyleBackColor = false;
             btnIngresar.Click += btnIngresar_Click;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(336, 83);
+            txtUsuario.Location = new Point(500, 99);
+            txtUsuario.Margin = new Padding(4, 5, 4, 5);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(100, 23);
+            txtUsuario.Size = new Size(141, 31);
             txtUsuario.TabIndex = 1;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtContrasenia
             // 
-            txtContrasenia.Location = new Point(336, 119);
+            txtContrasenia.Location = new Point(500, 150);
+            txtContrasenia.Margin = new Padding(4, 5, 4, 5);
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
-            txtContrasenia.Size = new Size(100, 23);
+            txtContrasenia.Size = new Size(141, 31);
             txtContrasenia.TabIndex = 2;
             txtContrasenia.TextChanged += txtContrasenia_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(263, 91);
+            label1.BackColor = SystemColors.ControlLightLight;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(371, 102);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(77, 25);
             label1.TabIndex = 3;
             label1.Text = "Usuario";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(263, 127);
+            label2.BackColor = SystemColors.ButtonHighlight;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(371, 153);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(67, 15);
+            label2.Size = new Size(108, 25);
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             // 
@@ -95,14 +107,16 @@
             // 
             // Register
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(922, 453);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtContrasenia);
             Controls.Add(txtUsuario);
             Controls.Add(btnIngresar);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Register";
             Text = "LogIn";
             Load += Register_Load;

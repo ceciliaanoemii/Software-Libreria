@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaLibros));
             btnRegistraLibro = new Button();
             btnLibrosDisponibles = new Button();
             btnRegistrar = new Button();
@@ -36,9 +37,12 @@
             // btnRegistraLibro
             // 
             btnRegistraLibro.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRegistraLibro.Location = new Point(181, 123);
+            btnRegistraLibro.ForeColor = Color.Sienna;
+            btnRegistraLibro.Image = (Image)resources.GetObject("btnRegistraLibro.Image");
+            btnRegistraLibro.Location = new Point(259, 205);
+            btnRegistraLibro.Margin = new Padding(4, 5, 4, 5);
             btnRegistraLibro.Name = "btnRegistraLibro";
-            btnRegistraLibro.Size = new Size(116, 68);
+            btnRegistraLibro.Size = new Size(166, 113);
             btnRegistraLibro.TabIndex = 0;
             btnRegistraLibro.Text = "Registrar Libro";
             btnRegistraLibro.UseVisualStyleBackColor = true;
@@ -47,9 +51,12 @@
             // btnLibrosDisponibles
             // 
             btnLibrosDisponibles.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLibrosDisponibles.Location = new Point(458, 123);
+            btnLibrosDisponibles.ForeColor = Color.Sienna;
+            btnLibrosDisponibles.Image = (Image)resources.GetObject("btnLibrosDisponibles.Image");
+            btnLibrosDisponibles.Location = new Point(654, 205);
+            btnLibrosDisponibles.Margin = new Padding(4, 5, 4, 5);
             btnLibrosDisponibles.Name = "btnLibrosDisponibles";
-            btnLibrosDisponibles.Size = new Size(120, 68);
+            btnLibrosDisponibles.Size = new Size(171, 113);
             btnLibrosDisponibles.TabIndex = 1;
             btnLibrosDisponibles.Text = "Libros Disponibles";
             btnLibrosDisponibles.UseVisualStyleBackColor = true;
@@ -57,9 +64,10 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(52, 391);
+            btnRegistrar.Location = new Point(74, 652);
+            btnRegistrar.Margin = new Padding(4, 5, 4, 5);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(94, 42);
+            btnRegistrar.Size = new Size(134, 70);
             btnRegistrar.TabIndex = 4;
             btnRegistrar.Text = "Regresar";
             btnRegistrar.UseVisualStyleBackColor = true;
@@ -67,12 +75,13 @@
             // 
             // VentanaLibros
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 449);
+            ClientSize = new Size(1143, 748);
             Controls.Add(btnRegistrar);
             Controls.Add(btnLibrosDisponibles);
             Controls.Add(btnRegistraLibro);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "VentanaLibros";
             Text = "Ventana Libros";
             Load += VentanaLibros_Load;

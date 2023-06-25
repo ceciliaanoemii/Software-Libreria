@@ -28,66 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowDashboard));
             button1 = new Button();
-            btnClients = new Button();
             btnBooks = new Button();
             btnSales = new Button();
-            panel1.SuspendLayout();
+            btnClients = new Button();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.NavajoWhite;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(-2, -2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(804, 64);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(497, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Hola ";
             // 
             // button1
             // 
-            button1.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Font = new Font("Bell MT", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(14, 14);
+            button1.Location = new Point(13, 24);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(125, 38);
+            button1.Size = new Size(109, 36);
             button1.TabIndex = 0;
-            button1.Text = "VOLVER";
+            button1.Text = "Salir";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_2;
             // 
-            // btnClients
-            // 
-            btnClients.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClients.ForeColor = SystemColors.ActiveCaptionText;
-            btnClients.Location = new Point(68, 143);
-            btnClients.Name = "btnClients";
-            btnClients.Size = new Size(125, 38);
-            btnClients.TabIndex = 2;
-            btnClients.Text = "CLIENTES";
-            btnClients.UseVisualStyleBackColor = true;
-            btnClients.Click += btnClients_Click;
-            // 
             // btnBooks
             // 
-            btnBooks.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBooks.ForeColor = SystemColors.ActiveCaptionText;
-            btnBooks.Location = new Point(321, 143);
+            btnBooks.FlatStyle = FlatStyle.Flat;
+            btnBooks.Font = new Font("Bauhaus 93", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBooks.ForeColor = Color.Sienna;
+            btnBooks.Image = (Image)resources.GetObject("btnBooks.Image");
+            btnBooks.Location = new Point(382, 99);
+            btnBooks.Margin = new Padding(4, 5, 4, 5);
             btnBooks.Name = "btnBooks";
-            btnBooks.Size = new Size(125, 38);
+            btnBooks.Size = new Size(337, 63);
             btnBooks.TabIndex = 3;
             btnBooks.Text = "LIBROS";
             btnBooks.UseVisualStyleBackColor = true;
@@ -95,41 +65,54 @@
             // 
             // btnSales
             // 
-            btnSales.Font = new Font("Book Antiqua", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSales.ForeColor = SystemColors.ActiveCaptionText;
-            btnSales.Location = new Point(550, 143);
+            btnSales.Font = new Font("Bauhaus 93", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSales.ForeColor = Color.Sienna;
+            btnSales.Image = (Image)resources.GetObject("btnSales.Image");
+            btnSales.Location = new Point(382, 294);
+            btnSales.Margin = new Padding(4, 5, 4, 5);
             btnSales.Name = "btnSales";
-            btnSales.Size = new Size(222, 38);
+            btnSales.Size = new Size(337, 73);
             btnSales.TabIndex = 4;
             btnSales.Text = "REALIZAR VENTA";
             btnSales.UseVisualStyleBackColor = true;
             btnSales.Click += btnSales_Click_1;
             // 
+            // btnClients
+            // 
+            btnClients.Font = new Font("Bauhaus 93", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClients.ForeColor = Color.Sienna;
+            btnClients.Image = (Image)resources.GetObject("btnClients.Image");
+            btnClients.Location = new Point(382, 192);
+            btnClients.Margin = new Padding(4, 5, 4, 5);
+            btnClients.Name = "btnClients";
+            btnClients.Size = new Size(337, 63);
+            btnClients.TabIndex = 2;
+            btnClients.Text = "CLIENTES";
+            btnClients.UseVisualStyleBackColor = true;
+            btnClients.Click += btnClients_Click;
+            // 
             // WindowDashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1120, 510);
             Controls.Add(btnSales);
+            Controls.Add(button1);
             Controls.Add(btnBooks);
             Controls.Add(btnClients);
-            Controls.Add(panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "WindowDashboard";
             Text = "Dashboard";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
         private Button button1;
-        private Label label1;
         private Button btnBooks;
-        private Button btnClients;
         private Button btnSales;
         private EventHandler button1_Click_1;
+        private Button btnClients;
     }
 }

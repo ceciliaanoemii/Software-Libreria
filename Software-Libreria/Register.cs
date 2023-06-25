@@ -21,8 +21,8 @@ namespace Software_Libreria
         }
         private void controlBotones()
         {
-            if(controlUsuario()&&controlContrasenia() ) 
-            { 
+            if (controlUsuario() && controlContrasenia())
+            {
                 btnIngresar.Enabled = true;
                 MessageBox.Show("Usuario correcto, puede ingresar");
             }
@@ -48,9 +48,9 @@ namespace Software_Libreria
                 return false;
             }
         }
-        private bool controlContrasenia()  
+        private bool controlContrasenia()
         {
-            if (txtContrasenia.Text.Trim() != string.Empty && txtContrasenia.Text.Equals(contrasenia) )
+            if (txtContrasenia.Text.Trim() != string.Empty && txtContrasenia.Text.Equals(contrasenia))
             {
                 errorProvider2.SetError(txtContrasenia, "");
                 return true;
@@ -58,9 +58,9 @@ namespace Software_Libreria
             }
             else
             {
-                if(!txtContrasenia.Text.All(Char.IsLetter))
+                if (!txtContrasenia.Text.All(Char.IsLetter))
                 {
-                errorProvider2.SetError(txtContrasenia, "Los datos son incorrectos");
+                    errorProvider2.SetError(txtContrasenia, "Los datos son incorrectos");
 
                 }
                 else

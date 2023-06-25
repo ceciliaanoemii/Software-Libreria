@@ -15,7 +15,7 @@ namespace Software_Libreria
         string nombre_vendedor;
         List<VentanaLibros> lista_libros = new List<VentanaLibros>();
 
-        List<VentanaCliente> lista_clientes= new List<VentanaCliente>();
+        List<VentanaCliente> lista_clientes = new List<VentanaCliente>();
         List<Venta> lista_venta = new List<Venta>();
 
         public WindowDashboard(string usuario, string contrasenia)
@@ -33,14 +33,11 @@ namespace Software_Libreria
             this.Close();
         }
 
-        private void WindowDashboard_Load(object sender, EventArgs e)
-        {
-            label1.Text += nombre_vendedor;
-        }
+
 
         private void btnBooks_Click(object sender, EventArgs e)
         {
-            
+
             using (VentanaLibros ventanaLibros = new VentanaLibros(lista_libros))
                 ventanaLibros.ShowDialog();
         }
@@ -87,5 +84,9 @@ namespace Software_Libreria
                 ventanaClientes.ShowDialog();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
