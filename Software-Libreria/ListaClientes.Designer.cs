@@ -35,8 +35,6 @@
             Dni = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
-            label3 = new Label();
-            prueba = new Button();
             btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridListClientes).BeginInit();
             SuspendLayout();
@@ -75,7 +73,7 @@
             dataGridListClientes.Location = new Point(168, 198);
             dataGridListClientes.Name = "dataGridListClientes";
             dataGridListClientes.RowTemplate.Height = 25;
-            dataGridListClientes.Size = new Size(337, 82);
+            dataGridListClientes.Size = new Size(337, 165);
             dataGridListClientes.TabIndex = 3;
             // 
             // Dni
@@ -93,28 +91,9 @@
             Telefono.HeaderText = "Telefono";
             Telefono.Name = "Telefono";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(282, 127);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
-            // 
-            // prueba
-            // 
-            prueba.Location = new Point(359, 123);
-            prueba.Name = "prueba";
-            prueba.Size = new Size(75, 23);
-            prueba.TabIndex = 5;
-            prueba.Text = "prueba";
-            prueba.UseVisualStyleBackColor = true;
-            prueba.Click += prueba_Click;
-            // 
             // btnRegresar
             // 
-            btnRegresar.Location = new Point(633, 293);
+            btnRegresar.Location = new Point(607, 383);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(75, 23);
             btnRegresar.TabIndex = 6;
@@ -128,8 +107,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnRegresar);
-            Controls.Add(prueba);
-            Controls.Add(label3);
             Controls.Add(dataGridListClientes);
             Controls.Add(txtdni);
             Controls.Add(label2);
@@ -148,8 +125,6 @@
         private Label label2;
         private TextBox txtdni;
         private DataGridView dataGridListClientes;
-        private Label label3;
-        private Button prueba;
         private DataGridViewTextBoxColumn Dni;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Telefono;
