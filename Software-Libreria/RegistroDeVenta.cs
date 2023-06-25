@@ -31,6 +31,7 @@ namespace Software_Libreria
             lblPrecio.Text = (0).ToString("C");
             lblTotal.Text = (0).ToString("C");
             lblDescuento.Text = (0).ToString("C");
+            //venta venta_actual = new venta();
         }
 
 
@@ -132,6 +133,8 @@ namespace Software_Libreria
     {
         private string id;
         List<ejemplar_libro> renglon;
+        string fecha;
+        VentanaCliente cliente_actual;
 
         venta (string id, List<ejemplar_libro> renglon)
         {
