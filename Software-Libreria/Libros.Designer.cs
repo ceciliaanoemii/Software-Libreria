@@ -36,21 +36,21 @@
             // 
             // btnRegistraLibro
             // 
-            btnRegistraLibro.Location = new Point(169, 290);
-            btnRegistraLibro.Margin = new Padding(4, 5, 4, 5);
+            btnRegistraLibro.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistraLibro.Location = new Point(158, 102);
             btnRegistraLibro.Name = "btnRegistraLibro";
-            btnRegistraLibro.Size = new Size(134, 70);
+            btnRegistraLibro.Size = new Size(116, 68);
             btnRegistraLibro.TabIndex = 0;
-            btnRegistraLibro.Text = "Registra Libro";
+            btnRegistraLibro.Text = "Registrar Libro";
             btnRegistraLibro.UseVisualStyleBackColor = true;
             btnRegistraLibro.Click += btnRegistraLibro_Click;
             // 
             // btnLibrosDisponibles
             // 
-            btnLibrosDisponibles.Location = new Point(524, 290);
-            btnLibrosDisponibles.Margin = new Padding(4, 5, 4, 5);
+            btnLibrosDisponibles.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLibrosDisponibles.Location = new Point(372, 102);
             btnLibrosDisponibles.Name = "btnLibrosDisponibles";
-            btnLibrosDisponibles.Size = new Size(154, 70);
+            btnLibrosDisponibles.Size = new Size(120, 68);
             btnLibrosDisponibles.TabIndex = 1;
             btnLibrosDisponibles.Text = "Libros Disponibles";
             btnLibrosDisponibles.UseVisualStyleBackColor = true;
@@ -58,20 +58,19 @@
             // 
             // btnEliminarLibro
             // 
-            btnEliminarLibro.Location = new Point(861, 290);
-            btnEliminarLibro.Margin = new Padding(4, 5, 4, 5);
+            btnEliminarLibro.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarLibro.Location = new Point(585, 102);
             btnEliminarLibro.Name = "btnEliminarLibro";
-            btnEliminarLibro.Size = new Size(134, 70);
+            btnEliminarLibro.Size = new Size(120, 68);
             btnEliminarLibro.TabIndex = 2;
             btnEliminarLibro.Text = "Eliminar Libros";
             btnEliminarLibro.UseVisualStyleBackColor = true;
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(74, 651);
-            btnRegistrar.Margin = new Padding(4, 5, 4, 5);
+            btnRegistrar.Location = new Point(52, 391);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(134, 70);
+            btnRegistrar.Size = new Size(94, 42);
             btnRegistrar.TabIndex = 4;
             btnRegistrar.Text = "Regresar";
             btnRegistrar.UseVisualStyleBackColor = true;
@@ -79,14 +78,13 @@
             // 
             // VentanaLibros
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(800, 449);
             Controls.Add(btnRegistrar);
             Controls.Add(btnEliminarLibro);
             Controls.Add(btnLibrosDisponibles);
             Controls.Add(btnRegistraLibro);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "VentanaLibros";
             Text = "Ventana Libros";
             Load += VentanaLibros_Load;

@@ -50,7 +50,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(260, 58);
+            label1.Location = new Point(293, 85);
             label1.Name = "label1";
             label1.Size = new Size(68, 15);
             label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(260, 169);
+            label2.Location = new Point(293, 149);
             label2.Name = "label2";
             label2.Size = new Size(115, 15);
             label2.TabIndex = 1;
@@ -68,7 +68,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(260, 115);
+            label3.Location = new Point(293, 115);
             label3.Name = "label3";
             label3.Size = new Size(107, 15);
             label3.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             // txtdni
             // 
-            txtdni.Location = new Point(391, 58);
+            txtdni.Location = new Point(424, 82);
             txtdni.Name = "txtdni";
             txtdni.Size = new Size(138, 23);
             txtdni.TabIndex = 3;
@@ -84,14 +84,15 @@
             // 
             // txtcelular
             // 
-            txtcelular.Location = new Point(391, 161);
+            txtcelular.Location = new Point(424, 141);
             txtcelular.Name = "txtcelular";
             txtcelular.Size = new Size(138, 23);
             txtcelular.TabIndex = 4;
+            txtcelular.TextChanged += txtcelular_TextChanged;
             // 
             // txtnombre
             // 
-            txtnombre.Location = new Point(391, 107);
+            txtnombre.Location = new Point(424, 112);
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(138, 23);
             txtnombre.TabIndex = 5;
@@ -100,7 +101,7 @@
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dgvClientes.Location = new Point(260, 211);
+            dgvClientes.Location = new Point(260, 197);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.Size = new Size(342, 84);
@@ -127,7 +128,7 @@
             button2.Name = "button2";
             button2.Size = new Size(140, 29);
             button2.TabIndex = 8;
-            button2.Text = "Cancelar";
+            button2.Text = "Regresar";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
