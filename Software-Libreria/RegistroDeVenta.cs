@@ -127,4 +127,36 @@ namespace Software_Libreria
         //  MessageBox.Show("Debe seleccionar un tipo de pago...!!!");
 
     }
+
+    public class venta
+    {
+        private string id;
+        List<ejemplar_libro> renglon;
+
+        venta (string id, List<ejemplar_libro> renglon)
+        {
+            this.id = id;
+            this.renglon = renglon;
+        }
+    }
+
+    public class ejemplar_libro
+    {
+        private string id;
+        private string titulo;
+        private string autor;
+        private string editorial;
+        private double precio;
+        private int cantidad;
+
+        ejemplar_libro(string i, string t, string a, string e, double p, int c)
+        {
+            this.id = i;
+            this.titulo = t;
+            this.autor = a;
+            this.editorial = e;
+            this.precio = p;
+            this.cantidad = c;
+        }
+    }
 }

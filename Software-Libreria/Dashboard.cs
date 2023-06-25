@@ -14,6 +14,7 @@ namespace Software_Libreria
     {
         string nombre_vendedor;
         List<VentanaLibros> lista_libros = new List<VentanaLibros>();
+        List<venta> lista_venta = new List<venta>();
         public WindowDashboard(string usuario, string contrasenia)
         {
             InitializeComponent();
