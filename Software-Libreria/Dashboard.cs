@@ -16,12 +16,13 @@ namespace Software_Libreria
         List<VentanaLibros> lista_libros = new List<VentanaLibros>();
 
         List<VentanaCliente> lista_clientes= new List<VentanaCliente>();
-        List<venta> lista_venta = new List<venta>();
+        List<Venta> lista_venta = new List<Venta>();
 
         public WindowDashboard(string usuario, string contrasenia)
         {
             InitializeComponent();
             libros_precargados();
+            clientes_precargados();
             nombre_vendedor = usuario;
 
         }
@@ -46,7 +47,7 @@ namespace Software_Libreria
 
         private void btnSales_Click_1(object sender, EventArgs e)
         {
-            using (RegistroDeVenta VentanaVenta = new RegistroDeVenta(lista_libros))
+            using (RegistroDeVenta VentanaVenta = new RegistroDeVenta(lista_libros, lista_clientes))
                 VentanaVenta.ShowDialog();
         }
 
@@ -66,6 +67,18 @@ namespace Software_Libreria
             lista_libros.Add(libro1);
             libro1 = new VentanaLibros("4", "Ensayo de la Ceguera", "Jose Saramago", "Universal", 6000);
             lista_libros.Add(libro1);
+        }
+        public void clientes_precargados()
+        {
+            var cliente1 = new VentanaCliente("24568974", "Alan Brito", "1164895789");
+
+            lista_clientes.Add(cliente1);
+            cliente1 = new VentanaCliente("28562413", "Juana de Arco", "1123775648");
+            lista_clientes.Add(cliente1);
+            cliente1 = new VentanaCliente("35641245", "Elsa Bordelencuentro", "1140207042");
+            lista_clientes.Add(cliente1);
+            cliente1 = new VentanaCliente("47894231", "Aquiles Pinto", "1140477042");
+            lista_clientes.Add(cliente1);
         }
 
         private void btnClients_Click(object sender, EventArgs e)
