@@ -56,6 +56,7 @@
             label2 = new Label();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)erperror).BeginInit();
             gbRegistroLibros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRegistrosTotales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)boxPicture).BeginInit();
@@ -271,6 +272,7 @@
             btnCancelar.TabIndex = 28;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // label1
             // 
@@ -320,6 +322,7 @@
             Text = "Registrar Libros";
             TransparencyKey = Color.FromArgb(255, 192, 192);
             Load += RegistroLibros_Load;
+            ((System.ComponentModel.ISupportInitialize)erperror).EndInit();
             gbRegistroLibros.ResumeLayout(false);
             gbRegistroLibros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRegistrosTotales).EndInit();

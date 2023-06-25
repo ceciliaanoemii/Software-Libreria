@@ -28,62 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboListaClientes = new ComboBox();
-            label1 = new Label();
-            txtNombreCliente = new TextBox();
-            btnAgregarCliente = new Button();
+            btnRegresar = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
-            // comboListaClientes
+            // btnRegresar
             // 
-            comboListaClientes.BackColor = SystemColors.Info;
-            comboListaClientes.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboListaClientes.FormattingEnabled = true;
-            comboListaClientes.Items.AddRange(new object[] { "Cecilia", "Andres" });
-            comboListaClientes.Location = new Point(61, 79);
-            comboListaClientes.Name = "comboListaClientes";
-            comboListaClientes.Size = new Size(273, 23);
-            comboListaClientes.TabIndex = 0;
+            btnRegresar.Location = new Point(156, 285);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(96, 51);
+            btnRegresar.TabIndex = 3;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(428, 87);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Nombre";
+            button1.Location = new Point(161, 110);
+            button1.Name = "button1";
+            button1.Size = new Size(91, 48);
+            button1.TabIndex = 4;
+            button1.Text = "Registrar Cliente";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // txtNombreCliente
+            // button2
             // 
-            txtNombreCliente.Location = new Point(549, 88);
-            txtNombreCliente.Name = "txtNombreCliente";
-            txtNombreCliente.Size = new Size(100, 23);
-            txtNombreCliente.TabIndex = 2;
+            button2.Location = new Point(347, 110);
+            button2.Name = "button2";
+            button2.Size = new Size(91, 48);
+            button2.TabIndex = 5;
+            button2.Text = "Lista de Clientes";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // btnAgregarCliente
+            // button3
             // 
-            btnAgregarCliente.Location = new Point(543, 211);
-            btnAgregarCliente.Name = "btnAgregarCliente";
-            btnAgregarCliente.Size = new Size(75, 23);
-            btnAgregarCliente.TabIndex = 3;
-            btnAgregarCliente.Text = "Agregar";
-            btnAgregarCliente.UseVisualStyleBackColor = true;
+            button3.Location = new Point(552, 110);
+            button3.Name = "button3";
+            button3.Size = new Size(91, 48);
+            button3.TabIndex = 6;
+            button3.Text = "Eliminar Cliente";
+            button3.UseVisualStyleBackColor = true;
             // 
             // VentanaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 612);
-            Controls.Add(btnAgregarCliente);
-            Controls.Add(txtNombreCliente);
-            Controls.Add(label1);
-            Controls.Add(comboListaClientes);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(btnRegresar);
             Name = "VentanaCliente";
             Text = "Cliente";
             Load += VentanaCliente_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -91,6 +92,9 @@
         private ComboBox comboListaClientes;
         private Label label1;
         private TextBox txtNombreCliente;
-        private Button btnAgregarCliente;
+        private Button btnRegresar;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }

@@ -11,24 +11,24 @@ namespace Software_Libreria
         private string usuario { get; set; }
         private string contrasenia { get; set; }
         private List<Venta> ventas { get; set; }
-        private List<Cliente> clientes { get; set; }
+        private List<VentanaCliente> clientes { get; set; }
         public Vendedor(string nombre, int edad, string dni, string direccion, string telefono, string user, string constrasenia) : base(nombre, edad, dni, direccion, telefono)
         {
             this.usuario = user;
             this.contrasenia = constrasenia;
             this.ventas = new List<Venta>();
-            this.clientes = new List<Cliente>();
+            this.clientes = new List<VentanaCliente>();
         }
 
-        public List<Cliente> BuscarCliente(string dni)
+        public List<VentanaCliente> BuscarCliente(string dni)
         {
-            List<Cliente> clientesEncontrados = clientes.FindAll(cliente => cliente.DNI.Equals(dni));
+            List<VentanaCliente> clientesEncontrados = clientes.FindAll(cliente => cliente.getDni().Equals(dni));
             return clientesEncontrados;
         }
 
-        public void AgregarCliente(Cliente cliente)
+        public void AgregarCliente(VentanaCliente cliente)
         {
-            List<Cliente> clientesEncontrados = BuscarCliente(cliente.Nombre);
+            List<VentanaCliente> clientesEncontrados = BuscarCliente(cliente.getNombre());
 
             if (clientesEncontrados.Count == 0)
             {
