@@ -53,7 +53,6 @@
             btnCopiarPic = new Button();
             btnCancelar = new Button();
             label1 = new Label();
-            label2 = new Label();
             errorProvider1 = new ErrorProvider(components);
             errorProvider2 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)erperror).BeginInit();
@@ -96,6 +95,7 @@
             txtEditorial.Name = "txtEditorial";
             txtEditorial.Size = new Size(157, 25);
             txtEditorial.TabIndex = 25;
+            txtEditorial.TextChanged += txtEditorial_TextChanged;
             // 
             // txtprecio
             // 
@@ -104,6 +104,7 @@
             txtprecio.Name = "txtprecio";
             txtprecio.Size = new Size(93, 25);
             txtprecio.TabIndex = 22;
+            txtprecio.TextChanged += txtprecio_TextChanged;
             // 
             // txttitulo
             // 
@@ -112,6 +113,7 @@
             txttitulo.Name = "txttitulo";
             txttitulo.Size = new Size(157, 25);
             txttitulo.TabIndex = 21;
+            txttitulo.TextChanged += txttitulo_TextChanged_1;
             // 
             // txtautor
             // 
@@ -120,6 +122,7 @@
             txtautor.Name = "txtautor";
             txtautor.Size = new Size(133, 25);
             txtautor.TabIndex = 20;
+            txtautor.TextChanged += txtautor_TextChanged;
             // 
             // txtidlibro
             // 
@@ -270,7 +273,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(133, 37);
             btnCancelar.TabIndex = 28;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Regresar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
@@ -283,15 +286,6 @@
             label1.Size = new Size(283, 32);
             label1.TabIndex = 29;
             label1.Text = "Registro de nuevo libro";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(601, 310);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 30;
-            label2.Text = "label2";
             // 
             // errorProvider1
             // 
@@ -308,7 +302,6 @@
             BackColor = SystemColors.GradientInactiveCaption;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(764, 440);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnCancelar);
             Controls.Add(btnSeleccionPic);
@@ -358,7 +351,6 @@
         private Button btnCancelar;
         private Button btnCopiarPic;
         private PictureBox boxPicture;
-        private Label label2;
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
     }
