@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,10 +20,11 @@ namespace Software_Libreria
     {
         double precio = 0;
         List<VentanaLibros> Lista_libros;
-        VentanaLibros libro_seleccionado = new VentanaLibros("", "", "", "", 0);
+
         double subtotal = 0;
         double total = 0;
         double total_final = 0;
+        VentanaLibros libro_seleccionado = new VentanaLibros("", "", "", "", 0);
         public RegistroDeVenta(List<VentanaLibros> Lista_Libros)
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace Software_Libreria
             lblPrecio.Text = (0).ToString("C");
             lblTotal.Text = (0).ToString("C");
             lblDescuento.Text = (0).ToString("C");
+            //venta venta_actual = new venta();
         }
 
 
@@ -73,6 +76,7 @@ namespace Software_Libreria
             {
                 //procesar calculos
                 double descuento = 0;
+                MostrarLibro();
 
                 total_final = total_final + subtotal;
 
@@ -87,7 +91,6 @@ namespace Software_Libreria
                 }
                 lblDescuento.Text = descuento.ToString("C");
                 lblTotal.Text = total.ToString("C");
-                MostrarLibro();
 
                 lblPrecio.Text = (0).ToString("C");
 
@@ -125,10 +128,120 @@ namespace Software_Libreria
                 libro_seleccionado = libro_aux;
             }
         }
+        //Exportamos PDF
+        private void btnExportarPDF_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = string.Format("{0}.pdf", DateTime.Now.ToString("ddMMyyyy-HHmmss")) + ".pdf";
+            savefile.ShowDialog();
+
+
+            FileStream fs = new FileStream(savefile.FileName, FileMode.Create);
+            Document doc = new Document(PageSize.LETTER, 5, 5, 7, 7);
+            PdfWriter pw = PdfWriter.GetInstance(doc, fs);
+
+            doc.Open();
+
+            //titulo y autor
+            doc.AddAuthor("Newbie-Coders");
+            doc.AddTitle("Factura");
+
+            // definir la fuente
+            iTextSharp.text.Font standarFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+            //Encabezado
+            doc.Add(new Paragraph("Título factura"));
+            doc.Add(new Paragraph(DateTime.Today.Date.ToString("D")));
+
+            doc.Add(Chunk.NEWLINE);
+
+            //Encabezado Columnas
+            PdfPTable tblFactura = new PdfPTable(3);
+            tblFactura.WidthPercentage = 100;
+
+            //configuro titulo de columnas
+            PdfPCell colNombre = new PdfPCell(new Phrase("Nombre Libro", standarFont));
+            colNombre.BorderWidth = 0;
+            colNombre.BorderWidthBottom = 0.75f;
+
+            PdfPCell colCantidad = new PdfPCell(new Phrase("Cantidad", standarFont));
+            colNombre.BorderWidth = 1;
+            colNombre.BorderWidthBottom = 0.75f;
+
+            PdfPCell colPrecio = new PdfPCell(new Phrase("Precio", standarFont));
+            colNombre.BorderWidth = 1;
+            colNombre.BorderWidthBottom = 0.75f;
+
+            tblFactura.AddCell(colNombre);
+            tblFactura.AddCell(colCantidad);
+            tblFactura.AddCell(colPrecio);
+
+
+            //Agregando datos
+
+            foreach (var libro in Lista_libros)
+            {
+                colNombre = new PdfPCell(new Phrase(libro.getTitulo(), standarFont));
+                colNombre.BorderWidth = 0;
+
+                colCantidad = new PdfPCell(new Phrase(libro.getIdLibro(), standarFont));
+                colNombre.BorderWidth = 0;
+
+                colPrecio = new PdfPCell(new Phrase(libro.getPrecio().ToString(), standarFont));
+                colPrecio.BorderWidth = 0;
+
+                tblFactura.AddCell(colNombre);
+                tblFactura.AddCell(colCantidad);
+                tblFactura.AddCell(colPrecio);
+
+
+            }
+            doc.Add(tblFactura);
+
+            doc.Close();
+            pw.Close();
+
+            MessageBox.Show("Documento generado satisfactoriamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
 
 
         // if (comboSeleccionTipoPago.SelectedIndex == -1)
         //  MessageBox.Show("Debe seleccionar un tipo de pago...!!!");
 
+    }
+
+    public class venta
+    {
+        private string id;
+        List<ejemplar_libro> renglon;
+        string fecha;
+        VentanaCliente cliente_actual;
+
+        venta (string id, List<ejemplar_libro> renglon)
+        {
+            this.id = id;
+            this.renglon = renglon;
+        }
+    }
+
+    public class ejemplar_libro
+    {
+        private string id;
+        private string titulo;
+        private string autor;
+        private string editorial;
+        private double precio;
+        private int cantidad;
+
+        ejemplar_libro(string i, string t, string a, string e, double p, int c)
+        {
+            this.id = i;
+            this.titulo = t;
+            this.autor = a;
+            this.editorial = e;
+            this.precio = p;
+            this.cantidad = c;
+        }
     }
 }
