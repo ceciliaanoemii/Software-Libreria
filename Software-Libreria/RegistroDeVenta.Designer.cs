@@ -39,9 +39,12 @@
             btnSalir = new Button();
             lblPrecio = new Label();
             groupBox1 = new GroupBox();
+            btnSelecCliente = new Button();
             txtCantidad = new TextBox();
             button1 = new Button();
+            lblNombreCliente = new Label();
             labelTitulo = new Label();
+            txtDniCliente = new TextBox();
             textIdLibro = new TextBox();
             dataGridLibro = new DataGridView();
             Cantidad = new DataGridViewTextBoxColumn();
@@ -93,6 +96,15 @@
             label4.Size = new Size(93, 15);
             label4.TabIndex = 3;
             label4.Text = "Seleccione libro:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(7, 72);
+            label5.Name = "label5";
+            label5.Size = new Size(104, 15);
+            label5.TabIndex = 4;
+            label5.Text = "Seleccione cliente:";
             // 
             // label6
             // 
@@ -153,9 +165,12 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnSelecCliente);
             groupBox1.Controls.Add(txtCantidad);
             groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(lblNombreCliente);
             groupBox1.Controls.Add(labelTitulo);
+            groupBox1.Controls.Add(txtDniCliente);
             groupBox1.Controls.Add(textIdLibro);
             groupBox1.Controls.Add(lblPrecio);
             groupBox1.Controls.Add(label6);
@@ -168,6 +183,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Control de ventas";
             // 
+            // btnSelecCliente
+            // 
+            btnSelecCliente.Location = new Point(128, 88);
+            btnSelecCliente.Name = "btnSelecCliente";
+            btnSelecCliente.Size = new Size(75, 23);
+            btnSelecCliente.TabIndex = 19;
+            btnSelecCliente.Text = "Buscar";
+            btnSelecCliente.UseVisualStyleBackColor = true;
+            btnSelecCliente.Click += btnSelecCliente_Click_1;
+            // 
             // txtCantidad
             // 
             txtCantidad.Location = new Point(223, 35);
@@ -178,7 +203,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(83, 34);
+            button1.Location = new Point(106, 35);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(78, 20);
@@ -186,6 +211,17 @@
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // lblNombreCliente
+            // 
+            lblNombreCliente.AutoSize = true;
+            lblNombreCliente.BackColor = SystemColors.ActiveBorder;
+            lblNombreCliente.Location = new Point(223, 93);
+            lblNombreCliente.Margin = new Padding(2, 0, 2, 0);
+            lblNombreCliente.Name = "lblNombreCliente";
+            lblNombreCliente.Size = new Size(12, 15);
+            lblNombreCliente.TabIndex = 13;
+            lblNombreCliente.Text = "-";
             // 
             // labelTitulo
             // 
@@ -198,12 +234,22 @@
             labelTitulo.TabIndex = 13;
             labelTitulo.Text = "-";
             // 
+            // txtDniCliente
+            // 
+            txtDniCliente.Location = new Point(10, 89);
+            txtDniCliente.Margin = new Padding(2);
+            txtDniCliente.Name = "txtDniCliente";
+            txtDniCliente.PlaceholderText = "Ingrese DNI cliente";
+            txtDniCliente.Size = new Size(113, 23);
+            txtDniCliente.TabIndex = 16;
+            // 
             // textIdLibro
             // 
             textIdLibro.Location = new Point(10, 35);
             textIdLibro.Margin = new Padding(2);
             textIdLibro.Name = "textIdLibro";
-            textIdLibro.Size = new Size(61, 23);
+            textIdLibro.PlaceholderText = "Ingrese ID Libro";
+            textIdLibro.Size = new Size(91, 23);
             textIdLibro.TabIndex = 16;
             // 
             // dataGridLibro
@@ -296,7 +342,7 @@
             btnExportarPDF.Name = "btnExportarPDF";
             btnExportarPDF.Size = new Size(103, 23);
             btnExportarPDF.TabIndex = 16;
-            btnExportarPDF.Text = "Exportar PDF";
+            btnExportarPDF.Text = "Imprimir Factura";
             btnExportarPDF.UseVisualStyleBackColor = true;
             btnExportarPDF.Click += btnExportarPDF_Click_1;
             // 
@@ -355,5 +401,8 @@
         private Label lblDescuento;
         private Label label10;
         private Button btnExportarPDF;
+        private Label lblNombreCliente;
+        private TextBox txtDniCliente;
+        private Button btnSelecCliente;
     }
 }

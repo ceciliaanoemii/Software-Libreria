@@ -20,7 +20,6 @@ namespace Software_Libreria
         {
 
             this.nombre = nombre;
-            this.dni = dni;
             this.telefono = telefono;
 
             InitializeComponent();
