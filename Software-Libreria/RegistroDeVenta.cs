@@ -20,7 +20,7 @@ namespace Software_Libreria
     {
         double precio = 0;
         List<VentanaLibros> Lista_libros;
-
+        List<Ejemplar_libro> Lista_Ejemplares = new List<Ejemplar_libro>();
         double subtotal = 0;
         double total = 0;
         double total_final = 0;
@@ -37,7 +37,7 @@ namespace Software_Libreria
             lblPrecio.Text = (0).ToString("C");
             lblTotal.Text = (0).ToString("C");
             lblDescuento.Text = (0).ToString("C");
-            //venta venta_actual = new venta();
+            //venta venta_actual = new venta(); Esto se ejecuta al generar la factura
         }
 
 
@@ -89,6 +89,12 @@ namespace Software_Libreria
                 {
                     total = total_final;
                 }
+
+                Ejemplar_libro filaEjemplar = new Ejemplar_libro(libro_seleccionado.getIdLibro(), libro_seleccionado.getTitulo(), libro_seleccionado.getPrecio(), Convert.ToInt32(txtCantidad.Text));
+                
+                Lista_Ejemplares.Add(filaEjemplar);
+               
+
                 lblDescuento.Text = descuento.ToString("C");
                 lblTotal.Text = total.ToString("C");
 
@@ -179,12 +185,12 @@ namespace Software_Libreria
 
             //Agregando datos
 
-            foreach (var libro in Lista_libros)
+            foreach (var libro in Lista_Ejemplares)
             {
                 colNombre = new PdfPCell(new Phrase(libro.getTitulo(), standarFont));
                 colNombre.BorderWidth = 0;
 
-                colCantidad = new PdfPCell(new Phrase(libro.getIdLibro(), standarFont));
+                colCantidad = new PdfPCell(new Phrase(libro.getCantidad().ToString(), standarFont));
                 colNombre.BorderWidth = 0;
 
                 colPrecio = new PdfPCell(new Phrase(libro.getPrecio().ToString(), standarFont));
@@ -214,34 +220,43 @@ namespace Software_Libreria
     public class venta
     {
         private string id;
-        List<ejemplar_libro> renglon;
-        string fecha;
+        public List<Ejemplar_libro> ejemplares;
+        private string fecha;
         VentanaCliente cliente_actual;
+        private double total;
+        private string tipoPago;
+        private double descuento;
 
-        venta (string id, List<ejemplar_libro> renglon)
+        public venta (string id, List<Ejemplar_libro> ejemplares)
         {
             this.id = id;
-            this.renglon = renglon;
+            this.ejemplares = ejemplares;
         }
+
+        public string getId()  { return id;      }
+        public string getFecha() { return fecha; }
+        public double getTotal() { return total; }
     }
 
-    public class ejemplar_libro
+    public class Ejemplar_libro
     {
         private string id;
         private string titulo;
-        private string autor;
-        private string editorial;
         private double precio;
         private int cantidad;
 
-        ejemplar_libro(string i, string t, string a, string e, double p, int c)
+        public Ejemplar_libro(string i, string t, double p, int c)
         {
             this.id = i;
             this.titulo = t;
-            this.autor = a;
-            this.editorial = e;
             this.precio = p;
             this.cantidad = c;
         }
+
+        public string getId() { return id; }
+        public string getTitulo() { return titulo; }
+        public double getPrecio() { return precio; }
+        public int getCantidad() { return cantidad; }
+
     }
 }

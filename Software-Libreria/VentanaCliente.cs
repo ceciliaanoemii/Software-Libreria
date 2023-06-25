@@ -12,17 +12,14 @@ namespace Software_Libreria
 {
     public partial class VentanaCliente : Form
     {
-        string nombre;
-        int edad;
-        string dni;
-        string telefono;
-        List<VentanaCliente> clientes;
-
-        public VentanaCliente(IContainer components, string nombre, int edad, string dni, string telefono)
+        private string nombre;
+        private string dni;
+        private string telefono;
+        List<VentanaCliente> lista_clientes;
+        public VentanaCliente( string nombre, string dni, string telefono)
         {
-            this.components = components;
+            
             this.nombre = nombre;
-            this.edad = edad;
             this.dni = dni;
             this.telefono = telefono;
 
@@ -35,9 +32,48 @@ namespace Software_Libreria
 
         }
 
+        public VentanaCliente(List<VentanaCliente> lista_)
+        {
+            InitializeComponent();
+            this.lista_clientes = lista_;
+        }
+        public void setTodo( string dni, string nom, string tel)
+        {
+            this.dni = dni;
+            this.nombre = nom;
+            this.telefono = tel;
+        }
+
         private void VentanaCliente_Load(object sender, EventArgs e)
         {
 
         }
+
+        public string getNombre()
+        {
+            return this.nombre;
+        }
+        public string getDni()
+        {
+            return this.dni;
+        }
+        public string getTelefono()
+        {
+            return this.telefono;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (RegistroCliente ventanaRegistroCliente = new RegistroCliente(lista_clientes))
+                ventanaRegistroCliente.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ListaClientes cli = new ListaClientes(lista_clientes);
+            cli.ShowDialog();
+        }
+
+       
     }
 }
