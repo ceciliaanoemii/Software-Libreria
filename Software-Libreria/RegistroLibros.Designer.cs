@@ -312,6 +312,7 @@
             Controls.Add(boxPicture);
             ForeColor = SystemColors.ControlText;
             Name = "RegistroLibros";
+            Opacity = 0.7D;
             Text = "Registrar Libros";
             TransparencyKey = Color.FromArgb(255, 192, 192);
             Load += RegistroLibros_Load;
